@@ -13,9 +13,9 @@ expanding-your-dashboard
 cancer-mortality-data
 age-standardised-rates-population-data
 other-data-details-to-note-1
-example-datasets
 build-your-dashboard
 publishing
+example-datasets
 methods
 age-standardized-rates
 lifetime-risk

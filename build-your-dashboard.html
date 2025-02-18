@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Build Your Dashboard | The CaRDO Handbook</title>
+  <title>Chapter 5 Build Your Dashboard | The CaRDO Handbook</title>
   <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
 The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Build Your Dashboard | The CaRDO Handbook" />
+  <meta property="og:title" content="Chapter 5 Build Your Dashboard | The CaRDO Handbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
@@ -19,7 +19,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="github-repo" content="https://github.com/CCQResearch/CaRDO" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Build Your Dashboard | The CaRDO Handbook" />
+  <meta name="twitter:title" content="Chapter 5 Build Your Dashboard | The CaRDO Handbook" />
   
   <meta name="twitter:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
@@ -35,7 +35,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="example-datasets.html"/>
+<link rel="prev" href="expanding-your-dashboard.html"/>
 <link rel="next" href="publishing.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -172,9 +172,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="expanding-your-dashboard.html"><a href="expanding-your-dashboard.html#age-standardised-rates-population-data"><i class="fa fa-check"></i><b>4.2</b> Age-standardised rates – population data</a></li>
 <li class="chapter" data-level="4.3" data-path="expanding-your-dashboard.html"><a href="expanding-your-dashboard.html#other-data-details-to-note-1"><i class="fa fa-check"></i><b>4.3</b> Other data details to note</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>5</b> Example Datasets</a></li>
-<li class="chapter" data-level="6" data-path="build-your-dashboard.html"><a href="build-your-dashboard.html"><i class="fa fa-check"></i><b>6</b> Build Your Dashboard</a></li>
-<li class="chapter" data-level="7" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>7</b> Publishing</a></li>
+<li class="chapter" data-level="5" data-path="build-your-dashboard.html"><a href="build-your-dashboard.html"><i class="fa fa-check"></i><b>5</b> Build Your Dashboard</a></li>
+<li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
+<li class="chapter" data-level="7" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>7</b> Example Datasets</a></li>
 <li class="chapter" data-level="8" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>8</b> Methods</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="methods.html"><a href="methods.html#age-standardized-rates"><i class="fa fa-check"></i><b>8.1</b> Age-standardized rates</a></li>
@@ -202,8 +202,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="build-your-dashboard" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Build Your Dashboard<a href="build-your-dashboard.html#build-your-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="build-your-dashboard" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Build Your Dashboard<a href="build-your-dashboard.html#build-your-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>If you’ve made it this far, well done! You’re now ready to create a CaRDO dashboard.</p>
 <p><strong>Step 1</strong>. Open RStudio</p>
 <p><strong>Step 2</strong>. Set your working directory (optional)</p>
@@ -253,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Personalise your dashboard</li>
 </ul>
 <p><strong>Step 7</strong>. Run your dashboard application</p>
-<p>Once you’ve finished the setup, CaRDO will provide you with a file path (<em>your R working directory</em>) to your dashboard application. Follow the path and open the ‘app’ file - this is your CaRDO application! Run the R code by clicking ’Run App in the top right.</p>
+<p>Once you’ve finished the setup, CaRDO will provide you with a file path (<em>your R working directory</em>) to your dashboard application. Follow the path and open the ‘app’ file - this is your CaRDO application. Run the R code by clicking ’Run App in the top right.</p>
 <p><img src="images/app%20location.png" /></p>
 <p><br>
 You’ve done it! Start exploring your data by cycling through the available filters. If you run into any problems, or have any questions or concerns, please reach out to us at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a>.</p>
@@ -265,7 +265,7 @@ You’ve done it! Start exploring your data by cycling through the available fil
           </div>
         </div>
       </div>
-<a href="example-datasets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="expanding-your-dashboard.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="publishing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -297,7 +297,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-build.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-build.Rmd",
 "text": "Edit"
 },
 "history": {
