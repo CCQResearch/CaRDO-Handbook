@@ -1,0 +1,20 @@
+# From the beginning
+
+This document is designed to make CaRDO accessible to those with little or no R experience. For those with R and RStudio already installed and experience using R, skip ahead to [Data Requirements].    
+
+Don't be discouraged by the length of this document! Setting up your CaRDO dashboard is a simple and straightforward process, and this guide will walk you through it step by step. Our goal is to make it easy for you to access and visualize cancer data with confidence.
+
+## R & RStudio
+
+CaRDO is an R package and requires R and RStudio to work. R and RStudio are easy to install freely available software. 
+
+1.	First download R software [here](https://cran.rstudio.com/) and install. Being mindful to install the correct version for your computer’s operating system (Windows, Mac etc.)
+
+2.	Once R is installed, download the free version of RStudio [here](https://posit.co/download/rstudio-desktop/#download) and install. Open RStudio to confirm that it works. Note, if you are working within an organisation, you may need to contact your IT team to install R and RStudio. 
+
+Base R is not very user-friendly, and we won’t use it again here. However, it is necessary for working in **RStudio**. Think of RStudio as a program like Microsoft Word – but instead of helping you write in English, it helps you write in R. RStudio is far more user-friendly, and we will use it to build your CaRDO dashboard.
+
+Note: R is case sensitive. Code detailed here should be copied into RStudio exactly as it appears. 
+For readers wishing to learn more about R and RStudio, detailed learning material – well beyond what is required for CaRDO – is available [here](https://rstudio-education.github.io/hopr/index.html). 
+
+We’ll jump out of RStudio for a moment and in the next section discuss the data required to build a CaRDO dashboard.

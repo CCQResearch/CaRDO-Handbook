@@ -1,0 +1,54 @@
+--- 
+title: "The CaRDO Handbook"
+author: "James Retell, Sean Francis, James Rene & Peter Baade"
+#date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
+  It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the   statistical methods used.
+  The book is intended for those with minimal R and RStudio experience.
+link-citations: yes
+github-repo: https://github.com/CCQResearch/CaRDO
+---
+
+# About
+
+**CaRDO** is a user-friendly R package for creating interactive R-Shiny dashboards that visualize and publish population-level cancer statistics. Designed for users with little to no R or R-Shiny experience, CaRDO provides an accessible way to visually explore and communicate detailed cancer data with just a few clicks.
+
+Click [here](https://cancerqld.org.au/research/queensland-cancer-statistics/queensland-cancer-statistics-online-qcsol/){target="_blank"} to see an example of CaRDO in action
+
+## Getting started 
+
+If you're an experienced **R** user with data ready to go, then get started immediately with the following steps: 
+
+<!-- 1. Install necessary packages with this <a href="code/CaRDO required packages.R" download="Required packages">R code</a> -->
+1. CaRDO requires the following packages installed before launching
+``` r
+install.packages("devtools")
+install.packages("tidyverse")
+install.packages("plotly")
+install.packages("markdown")
+```
+
+2. Download CaRDO from GitHub using
+```{r, eval=FALSE}
+devtools::install_github("https://github.com/CCQResearch/CaRDO")
+```
+3. Load CaRDO using
+```{r, eval=FALSE}
+CaRDO::create_dashboard()
+```
+
+Otherwise, continue reading and we’ll walk you through creating a **CaRDO** dashboard step by step [From the beginning]. 
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

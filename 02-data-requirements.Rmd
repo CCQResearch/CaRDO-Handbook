@@ -1,0 +1,97 @@
+# Data Requirements
+
+## Data privacy 
+
+<span style="color:red;">Important.</span> Data loaded into CaRDO is stored locally on your computer, and all analyses are performed locally. Your data will not leave your computer while using CaRDO – CaRDO has been designed with data privacy as a top priority.
+ 
+However, if you choose to publish your dashboard (e.g., share it online), data will be uploaded to the cloud at the resolution that it appears in the dashboard. It is your responsibility to ensure that all displayed data is appropriate for sharing before publishing publicly.
+
+## The basic dashboard
+
+The type of CaRDO dashboard you’re able to create will depend on the breadth of data you have available.
+
+The simplest dashboard available is a display of cancer incidence statistics, and the data necessary to generate this minimum dashboard are listed below. 
+
+-	Cancer type
+-	Counts (number of diagnoses)
+-	Diagnosis year
+-	Age at diagnosis (5-year age groups)  
+-	Sex 
+
+*Note: The specific names of these variables in your dataset do not matter, only that these data are available.* 
+
+
+More expansive dashboards are possible where additional variables are available, and we will cover those options shortly. But first, there are **three** key requirements for any cancer dataset that is loaded into CaRDO. 
+
+### Data structure
+
+1. Your data **must** be in the following structure (variable names do not matter) 
+
+<br>
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+
+# Create a data frame
+cancer_data <- data.frame(
+  "Cancer" = c("Liver", "Breast", "Colorectal", "Prostate", "Breast"),
+  "Count" = c(25, 52, 28, 51, 11),
+  "Year" = c(2018, 2003, 2007, 2019, 2019),
+  "Age.group" = c(12, 15, 9, 9, 6),
+  "Sex" = c(1, 2, 2, 1, 2)
+)
+
+# Create the table
+kbl(cancer_data) %>%
+  kable_styling(bootstrap_options =c("condensed","striped"), full_width = T, font_size = 14) 
+  #add_header_above(c("Table 1. Example incidence data set"= 1, " " = 2, "Mortality (a)" = 2), font_size = 14)
+```
+<br>
+You must have a single column for each variable and outcome you wish to report, and each row in your dataset should correspond to a unique combination of each variable. Full example datasets are available {here} 
+
+### Cancer types
+
+2.	Cancer-type values **must** be coded as you wish them to be displayed (see example above).
+
+For example, breast cancer should be coded as ‘Breast cancer’ or ‘Breast’ and not as a numerical value. Numerical coding will cause cancer types to display as numbers in the dashboard and be uninterpretable for users who don’t know the coding scheme.    
+
+### 5-year age groups
+
+3.	Cancer counts must be aggregated by 5-year age groups, with age groups coded numerically from 1–18.
+
+5-year age groups are necessary for two reasons. Firstly, a standard format is required for CaRDO to aggregate data and display cancer counts by broad age groups. Secondly, where age-standardized rates are being calculated, 5-year age groups are required. 
+
+```{r, echo=FALSE}
+age_data <- data.frame(
+  "Age group" = c("0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", 
+                  "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", 
+                  "70-74", "75-79", "80-84", "85+"),
+  "Age group numeric" = 1:18
+)
+
+kbl(age_data) %>%
+  kable_styling(bootstrap_options =c("condensed","striped"), full_width = F, font_size = 14) 
+```
+
+Note, counts by 5-year age groups will NOT be displayed visually in the dashboard and will not be published online. CaRDO will only display and publish counts by the following broad age-groups. 
+
+```{r, echo=FALSE}
+age_group_broad <- data.frame(
+  "Broad age group" = c("0-34", "35-49", "50-64", "65+")
+)
+
+kbl(age_group_broad) %>%
+    kable_styling(bootstrap_options =c("condensed","striped"), full_width = F, font_size = 14) 
+```
+
+
+## Other data details to note
+1. It does not matter how sex is coded – you’ll be asked to define sex when loading your datasets.
+2. CaRDO will calculate counts for persons based on counts for males and females – you do not need to supply data for persons.  
+3. By default, counts below 5 will be suppressed. These data points will appear as ‘insufficient data’ in the dashboard. You will have the option to set a custom suppression threshold.  
+4. Where low counts can be reverse engineered by comparing counts across conditions, all related counts will be suppressed. For example, if thyroid cancer counts for men for a given year are below 5, but counts for women are available, both men’s and total (persons) will be suppressed, as the men’s count could be deduced by subtracting women from the total.
+5. You will be asked to specify if you have an ‘all cancers’ category in your dataset. We strongly recommend including an 'all cancers' category in your dataset. If you do not have an ‘all cancers’ category, one will be created for you based on aggregating over the cancer categories you supply. If your data is not exhaustive with respect to cancer categories, the ‘all cancers’ category may (will) be misleading. Furthermore, if you have **nested** cancer type categories in your dataset, for example ‘Gynecological’ and ‘Ovarian’ cancer, you **must** have an ‘all cancers’ category. Otherwise, cancer data will be double counted when aggregating across nested categories.
+
+<br>
+All right, if your dataset looks like the example above, and you have no additional data you wish to report, then you are ready to create your dashboard and you can skip ahead to [Build Your Dashboard]. If you have additional data to include in your dashboard, stick with us for just a moment longer and in the next section we’ll walk you through [Expanding your dashboard].  
