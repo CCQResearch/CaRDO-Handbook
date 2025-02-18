@@ -1,9 +1,0 @@
-# Publishing
-
-Once you have created a dashboard, you will need to decide how to publish it to allow users to access your dashboard and explore cancer patterns and trends. 
-
-There are several options available, however, we recommend using [shinyapps.io](https://www.shinyapps.io/). ShinyApps.io is a cloud-based hosting platform by [Posit](https://posit.co/) that allows users to easily deploy (within R) and share [Shiny](https://shiny.posit.co/) applications online without requiring server management. It offers multiple pricing tiers, including a free option, making it an accessible choice for individuals and small organizations. 
-
-ShinyApps.io does have security limitations that you should be aware of - ShinyApps.io applications are run in a shared environment. This means that data flows **outside** of your infrastructure to reach the platform. For this reason, we **do not recommend Shinyapps.io for highly sensitive data**. This is why we stress confirming that your data is fit for public consumption **before** publishing your dashboard, and why **CaRDO is specifically designed to handle sensitive data locally**, before it is published. Cancer Council Queensland uses ShinyApps.io to publish our [cancer statistics dashboard](https://cancerqld.org.au/research/queensland-cancer-statistics/queensland-cancer-statistics-online-qcsol/). 
-
-A detailed summary of alternative publishing options and their strengths and limitations is available [here](https://www.appsilon.com/post/r-shiny-deployment)
