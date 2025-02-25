@@ -12,8 +12,8 @@ cancer-mortality-data
 age-standardised-rates-population-data
 other-data-details-to-note-1
 build-your-dashboard
-quick-setup
 publishing
+quick-setup
 example-datasets
 methods
 age-standardized-rates
