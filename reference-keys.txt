@@ -1,9 +1,7 @@
 about
-getting-started
-from-the-beginning
+get-started
 r-rstudio
 data-requirements
-data-privacy
 the-basic-dashboard
 data-structure
 cancer-types
@@ -14,10 +12,12 @@ cancer-mortality-data
 age-standardised-rates-population-data
 other-data-details-to-note-1
 build-your-dashboard
+quick-setup
 publishing
 example-datasets
 methods
 age-standardized-rates
 lifetime-risk
 incidence-mortality-trends
+data-privacy
 references

@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Example Datasets | The CaRDO Handbook</title>
+  <title>Chapter 2 Get Started | The CaRDO Handbook</title>
   <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
 The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Example Datasets | The CaRDO Handbook" />
+  <meta property="og:title" content="Chapter 2 Get Started | The CaRDO Handbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
@@ -19,7 +19,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="github-repo" content="https://github.com/CCQResearch/CaRDO" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Example Datasets | The CaRDO Handbook" />
+  <meta name="twitter:title" content="Chapter 2 Get Started | The CaRDO Handbook" />
   
   <meta name="twitter:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
@@ -35,8 +35,8 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="publishing.html"/>
-<link rel="next" href="methods.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="data-requirements.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -200,23 +200,36 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="example-datasets" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">Chapter 8</span> Example Datasets<a href="example-datasets.html#example-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Below are three example datasets that can be used for exploring population-level cancer statistics in CaRDO. These datasets are designed to illustrate how cancer incidence, mortality, and population data should be structured and how they will be visualised in CaRDO.</p>
-<p><a href="data/CaRDO_Inc_Example.csv">Cancer Incidence Dataset</a>: An example dataset containing cancer <em>diagnoses</em> by cancer type, year, sex and age group.</p>
-<p><a href="data/CaRDO_Mrt_Example.csv">Cancer Mortality Dataset</a>: An example dataset containing cancer <em>deaths</em> by cancer type, year, sex and age group.</p>
-<p><a href="data/CaRDO_Pop_Example.csv">Population Dataset</a>: An example dataset containing population estimates by age group, and sex, which can be used for calculating cancer rates and standardizing comparisons over time. This dataset should correspond to the same geographic area as your cancer incidence and mortality data to ensure accurate rate calculations and comparisons.</p>
+<div id="get-started" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Get Started<a href="get-started.html#get-started" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This Handbook is a detailed guide to building your own CaRDO dashboard. Setting up your CaRDO dashboard is a simple and straightforward process, and this guide will walk you through it step by step. Our goal is to make it easy for you to visualize and publish your cancer data with confidence.</p>
+<p>CaRDO is an R package and requires R and RStudio to work. If you’re new to these software, don’t stress, we walk you through installation and setup of these software below. If you already have R and RStudio installed, jump ahead to <a href="data-requirements.html#data-requirements">Data Requirements</a>.</p>
+<ul>
+<li>If you prefer learning by doing and only referring to manuals as a last resort, you can follow these condensed, no-frills [instructions]. However, we don’t recommend this approach for anyone new to R and data structuring.</li>
+</ul>
+<div id="r-rstudio" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> R &amp; RStudio<a href="get-started.html#r-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R and RStudio are easy to install freely available software.</p>
+<ol style="list-style-type: decimal">
+<li><p>First download R software <a href="https://cran.rstudio.com/" target="_blank">here</a> and install. Being mindful to download the correct version for your computer’s operating system (Windows, Mac etc.). Once downloaded, run the R executable file and accept the default (recommended) installation options.</p></li>
+<li><p>Once R is installed, download the free version of RStudio <a href="https://posit.co/download/rstudio-desktop/#download" target="_blank">here</a> and install. Open RStudio to confirm that it works. Note, if you are working within an organisation, you may need to contact your IT team to install both R and RStudio.</p></li>
+</ol>
+<p>What are these software? Base R is not very user-friendly, and we won’t use it again here. However, it is necessary for <strong>RStudio</strong> to work. Think of RStudio as a program like Microsoft Word – but instead of helping you write in English, it helps you write in R. RStudio is far more user-friendly, and we will use it to build your CaRDO dashboard.</p>
+<p>Note: R and RStudio are case sensitive. Any code detailed here should be copied into RStudio <em>exactly</em> as it appears here.
+For readers wishing to learn more about R and RStudio, detailed learning material – well beyond what is required for CaRDO – is available <a href="https://rstudio-education.github.io/hopr/index.html" target="_blank">here</a>.</p>
+<p>We’ll jump out of RStudio for the moment and in the next section discuss <a href="data-requirements.html#data-requirements">Data Requirements</a> to build a CaRDO dashboard.</p>
 <p><br>
-<em>Please note that these datasets are fictional and do not represent real cancer data.</em></p>
+<span style="font-size:30px;"><a href="data-requirements.html#data-requirements">Data Requirements</a></span></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="publishing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-requirements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -247,7 +260,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-example.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
 "text": "Edit"
 },
 "history": {
