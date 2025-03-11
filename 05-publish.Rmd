@@ -78,7 +78,9 @@ Give your dashboard a name (this will appear in the URL!) and hit Publish - this
 And you're done. Your cancer dashboard is ready to share!
 
 <br>
-## Pricing
+
+### Pricing
+
 Shinyapps.io has a range of paid plans to suit different needs when deploying Shiny applications. By default, users can start with the free tier, which allows limited deployment with restrictions on active hours and resources. You can find more details on pricing tiers and available services [here](https://www.shinyapps.io/) 
 
 <br>
