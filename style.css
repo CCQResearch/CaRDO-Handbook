@@ -12,3 +12,22 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/* Style R code boxes */
+.book .book-body .page-wrapper .page-inner section.normal pre {
+  border-radius: 10px;
+  background: #FAF9F6;
+  box-shadow: 2px 2px lightgrey;
+  margin: 0 2px 1.275em;
+}
+
+
+/* Stye the copy to click board button */
+.copy-to-clipboard-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    visibility: visible;
+    border: none;
+    background: none;
+}

@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Methods | The CaRDO Handbook</title>
+  <title>Chapter 10 Methods | The CaRDO Handbook</title>
   <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
 The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Methods | The CaRDO Handbook" />
+  <meta property="og:title" content="Chapter 10 Methods | The CaRDO Handbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
@@ -19,7 +19,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="github-repo" content="https://github.com/CCQResearch/CaRDO" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Methods | The CaRDO Handbook" />
+  <meta name="twitter:title" content="Chapter 10 Methods | The CaRDO Handbook" />
   
   <meta name="twitter:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
@@ -173,13 +173,15 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
 <li class="chapter" data-level="2" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>2</b> Get Started</a></li>
 <li class="chapter" data-level="3" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>3</b> Data Requirements</a></li>
-<li class="chapter" data-level="4" data-path="expanding-your-dashboard.html"><a href="expanding-your-dashboard.html"><i class="fa fa-check"></i><b>4</b> Expanding Your Dashboard</a></li>
+<li class="chapter" data-level="4" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>4</b> Expand Your Dashboard</a></li>
 <li class="chapter" data-level="5" data-path="build-your-dashboard.html"><a href="build-your-dashboard.html"><i class="fa fa-check"></i><b>5</b> Build Your Dashboard</a></li>
 <li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
 <li class="chapter" data-level="7" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>7</b> Quick setup</a></li>
-<li class="chapter" data-level="8" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>8</b> Example Datasets</a></li>
-<li class="chapter" data-level="9" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>9</b> Methods</a></li>
-<li class="chapter" data-level="10" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>10</b> References</a></li>
+<li class="chapter" data-level="8" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>8</b> Updating Your Dashboard</a></li>
+<li class="chapter" data-level="9" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>9</b> Example Datasets</a></li>
+<li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="12" data-path="citation-contact.html"><a href="citation-contact.html"><i class="fa fa-check"></i><b>12</b> Citation &amp; Contact</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -200,26 +202,30 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="methods" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> Methods<a href="methods.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="age-standardized-rates" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Age-standardized rates<a href="methods.html#age-standardized-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="methods" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Methods<a href="methods.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="age-standardized-rates" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Age-standardized rates<a href="methods.html#age-standardized-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Age-standardised rates attempt to adjust for variation in age structures in different populations (either different geographical areas or the same population across time). There are two methods of age-standardisation – direct and indirect.</p>
 <p>All cancer diagnoses and cancer deaths trends were calculated using directly standardised rates. The method involves applying age-specific rates from the population of interest (i.e. your catchment) to a standard population, which in CaRDO is the <a href="https://seer.cancer.gov/stdpopulations/world.who.html" target="_blank">World Standard Population</a> by default [1]. Five-year age groups up to 85-years-and-above were used for all age-standardized rate calculations.</p>
 </div>
-<div id="lifetime-risk" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Lifetime risk<a href="methods.html#lifetime-risk" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lifetime-risk" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Lifetime risk<a href="methods.html#lifetime-risk" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Cumulative risk is a measure used to estimate the risk of developing or dying of cancer up to a specific age. It takes into account the removal of persons from the population of interest who have already been diagnosed with or died from cancer. Commonly expressed as a ‘1 in n’ proportion, the cumulative risk is calculated as:</p>
 <p><span class="math display">\[n = \frac{1}{1-\exp(-5\sum a_j\times\frac{100}{100000})}\]</span></p>
 <p>where <span class="math inline">\(a_j\)</span> are the age-specific rates (5-year age groups) per 100,000 for ages 0 – to your specific age group, for example 85. CaRDO provides the cumulative risk up to the age 85 as an approximation of lifetime risk. An x in 100 variation is also supplied, calculated as the inverse of the cumulative risk multiplied by 100. These calculations assume that the person experiences the current age-specific risk rates up to the age specified (e.g. 85), so do not account for any specific risk factors (such as smoking).</p>
 </div>
-<div id="incidence-mortality-trends" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Incidence &amp; mortality trends<a href="methods.html#incidence-mortality-trends" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="incidence-mortality-trends" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Incidence &amp; mortality trends<a href="methods.html#incidence-mortality-trends" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Incidence and mortality trends were calculated by fitting piece-wise functions, composed of splines and linear models, to the data.</p>
 <p>Break points were identified using the <code>strucchange</code> package <span class="citation">(<a href="references.html#ref-strucchange">Zeileis et al. 2002</a>)</span>, specifically the function <code>breakpoints()</code> <span class="citation">(<a href="references.html#ref-breakpoints_func">Zeileis et al. 2003</a>)</span>. The data was then segmented by these breakpoints. A maximum number of 3 breakpoints were set, with a minimum number of 5 observations within each segment. Then, a spline and linear model was fit to each segment using the <code>mgcv</code> package <span class="citation">(<a href="references.html#ref-mgcv">Wood 2003</a>)</span>. The model with the lowest AIC was chosen for each given segment.</p>
 </div>
-<div id="data-privacy" class="section level2 hasAnchor" number="9.4">
-<h2><span class="header-section-number">9.4</span> Data Privacy<a href="methods.html#data-privacy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sex-specific-cancers" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Sex specific cancers<a href="methods.html#sex-specific-cancers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>CaRDO does not inherently know which cancer types are sex-specific based on the data you load. Since accurate rate calculations require matching the denominator (population count) to the appropriate sex, CaRDO determines sex specificity by scanning the dataset for sex codes by cancer type across all years. If a cancer type has data for only one sex, it is classified as sex-specific. For example, because prostate cancer occurs only in males and is absent from female data, CaRDO knows to calculate rates using the male population as the denominator rather than the total population. It is important to note that this method <strong>does not</strong> distinguish between truly sex-specific cancers and cases where data for one sex is simply absent due to low numbers. Where data is absent due to low counts, CaRDO will <strong>misclassify</strong> the cancer type as sex-specific and calculate the rate using the <em>incorrect</em> denominator (population count). If this unlikely scenario arises, in the short term, we recommend removing cancer types from your dataset that are not sex-specific but where data is only available for one sex. For an alternative solution, please reach out to us at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a></p>
+</div>
+<div id="data-privacy" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Data Privacy<a href="methods.html#data-privacy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Data loaded into CaRDO is stored locally on your computer, and all analyses are performed locally. Your data will not leave your computer while using CaRDO – CaRDO has been designed with data privacy as a top priority.</p>
 <p>The process of loading data into CaRDO is no different to loading data into RStudio. In fact, that is all that is happening - CaRDO loads data into the RStudio environment and carries out data processing locally on your machine. It is perfectly safe to load sensitive data into CaRDO as you would into any other data software. Once CaRDO has finished data processing, it will create a series of data files used for the creation of the dashboard. We encourage you to inspect these data files if you have any concerns. Suppression of sensitive data (low counts) is discussed in the <a href="data-requirements.html#data-requirements">Data Requirements</a> section.</p>
 <p><span style="color:red;">Important:</span> If you choose to publish your dashboard (e.g., share it online), data will be uploaded to the <strong>cloud</strong> (made public) at the resolution that it appears in the dashboard. It is your responsibility to ensure that all displayed data is appropriate for sharing before publishing publicly.</p>
@@ -266,7 +272,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-methods.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/09-methods.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -36,7 +36,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   
   
 <link rel="prev" href="get-started.html"/>
-<link rel="next" href="expanding-your-dashboard.html"/>
+<link rel="next" href="expand-your-dashboard.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -173,13 +173,15 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
 <li class="chapter" data-level="2" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>2</b> Get Started</a></li>
 <li class="chapter" data-level="3" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>3</b> Data Requirements</a></li>
-<li class="chapter" data-level="4" data-path="expanding-your-dashboard.html"><a href="expanding-your-dashboard.html"><i class="fa fa-check"></i><b>4</b> Expanding Your Dashboard</a></li>
+<li class="chapter" data-level="4" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>4</b> Expand Your Dashboard</a></li>
 <li class="chapter" data-level="5" data-path="build-your-dashboard.html"><a href="build-your-dashboard.html"><i class="fa fa-check"></i><b>5</b> Build Your Dashboard</a></li>
 <li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
 <li class="chapter" data-level="7" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>7</b> Quick setup</a></li>
-<li class="chapter" data-level="8" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>8</b> Example Datasets</a></li>
-<li class="chapter" data-level="9" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>9</b> Methods</a></li>
-<li class="chapter" data-level="10" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>10</b> References</a></li>
+<li class="chapter" data-level="8" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>8</b> Updating Your Dashboard</a></li>
+<li class="chapter" data-level="9" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>9</b> Example Datasets</a></li>
+<li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="12" data-path="citation-contact.html"><a href="citation-contact.html"><i class="fa fa-check"></i><b>12</b> Citation &amp; Contact</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -202,7 +204,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="data-requirements" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Data Requirements<a href="data-requirements.html#data-requirements" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><span style="color:red;">Important.</span> Data loaded into CaRDO is stored locally on your computer, and all analyses are performed locally. Your data will not leave your computer while using CaRDO.</p>
+<p><span style="color:red;">Important:</span> Data loaded into CaRDO is stored locally on your computer, and all analyses are performed locally. Your data will not leave your computer while using CaRDO.</p>
 <p>However, if you choose to publish your dashboard (e.g., share it online), data will be uploaded to the cloud at the resolution that it appears in the dashboard. It is your responsibility to ensure that all displayed data is appropriate for sharing before publishing publicly. See <a href="methods.html#data-privacy">data privacy</a> for more details.</p>
 <div id="the-basic-dashboard" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> The basic dashboard<a href="data-requirements.html#the-basic-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -217,7 +219,7 @@ div.csl-indent {
 <li>Sex</li>
 </ul>
 <p><em>Note: The specific names of these variables in your dataset do not matter, only that these data are available.</em></p>
-<p>More expansive dashboards are possible where additional variables are available, and we cover those options in <a href="expanding-your-dashboard.html#expanding-your-dashboard">Expanding Your Dashboard</a>. But first, there are <strong>three</strong> key requirements for all cancer datasets loaded into CaRDO.</p>
+<p>More expansive dashboards are possible where additional variables are available, and we cover those options in <a href="expand-your-dashboard.html#expand-your-dashboard">Expand Your Dashboard</a>. But first, there are <strong>three</strong> key requirements for all cancer datasets loaded into CaRDO.</p>
 <div id="data-structure" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Data structure<a href="data-requirements.html#data-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
@@ -562,7 +564,10 @@ Broad.age.group
 <li>You will be asked to specify if you have an ‘all cancers’ category in your dataset. We strongly recommend including an ‘all cancers’ category in your dataset. If you do not have an ‘all cancers’ category, one will be created for you based on aggregating over the cancer categories you supply. If your data is not exhaustive with respect to cancer categories, the ‘all cancers’ category may (will) be misleading. Furthermore, if you have <strong>nested</strong> cancer type categories in your dataset, for example ‘Gynecological’ and ‘Ovarian’ cancer, you <strong>must</strong> have an ‘all cancers’ category. Otherwise, cancer data will be double counted when aggregating across nested categories.</li>
 </ol>
 <p><br>
-All right, if your dataset looks like the example above, and you have no additional data you wish to report, then you are ready to create your dashboard and you can start to <a href="build-your-dashboard.html#build-your-dashboard">Build Your Dashboard</a>. If you have additional data to include in your dashboard, stick with us for just a moment longer and in the next section we’ll walk you through <a href="expanding-your-dashboard.html#expanding-your-dashboard">Expanding your dashboard</a>.</p>
+If you have additional data to include in your dashboard, stick with us for just a moment longer—we’ll walk you through how to <a href="expand-your-dashboard.html#expand-your-dashboard">Expand Your Dashboard</a> in the next section. Otherwise, if your dataset looks like the example above and you have no further data to add, then you’re ready to <a href="build-your-dashboard.html#build-your-dashboard">Build Your Dashboard</a>!</p>
+<p><br>
+<span style="font-size:25px;"><a href="expand-your-dashboard.html#expand-your-dashboard">Expand Your Dashboard</a></span></p>
+<p><span style="font-size:25px;"><a href="build-your-dashboard.html#build-your-dashboard">Build Your Dashboard</a></span></p>
 
 </div>
 </div>
@@ -572,7 +577,7 @@ All right, if your dataset looks like the example above, and you have no additio
         </div>
       </div>
 <a href="get-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="expanding-your-dashboard.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="expand-your-dashboard.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

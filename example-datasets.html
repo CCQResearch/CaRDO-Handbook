@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Example Datasets | The CaRDO Handbook</title>
+  <title>Chapter 9 Example Datasets | The CaRDO Handbook</title>
   <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
 The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Example Datasets | The CaRDO Handbook" />
+  <meta property="og:title" content="Chapter 9 Example Datasets | The CaRDO Handbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
@@ -19,7 +19,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="github-repo" content="https://github.com/CCQResearch/CaRDO" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Example Datasets | The CaRDO Handbook" />
+  <meta name="twitter:title" content="Chapter 9 Example Datasets | The CaRDO Handbook" />
   
   <meta name="twitter:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
@@ -35,7 +35,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="quick-setup.html"/>
+<link rel="prev" href="updating-your-dashboard.html"/>
 <link rel="next" href="methods.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -173,13 +173,15 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
 <li class="chapter" data-level="2" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>2</b> Get Started</a></li>
 <li class="chapter" data-level="3" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>3</b> Data Requirements</a></li>
-<li class="chapter" data-level="4" data-path="expanding-your-dashboard.html"><a href="expanding-your-dashboard.html"><i class="fa fa-check"></i><b>4</b> Expanding Your Dashboard</a></li>
+<li class="chapter" data-level="4" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>4</b> Expand Your Dashboard</a></li>
 <li class="chapter" data-level="5" data-path="build-your-dashboard.html"><a href="build-your-dashboard.html"><i class="fa fa-check"></i><b>5</b> Build Your Dashboard</a></li>
 <li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
 <li class="chapter" data-level="7" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>7</b> Quick setup</a></li>
-<li class="chapter" data-level="8" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>8</b> Example Datasets</a></li>
-<li class="chapter" data-level="9" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>9</b> Methods</a></li>
-<li class="chapter" data-level="10" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>10</b> References</a></li>
+<li class="chapter" data-level="8" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>8</b> Updating Your Dashboard</a></li>
+<li class="chapter" data-level="9" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>9</b> Example Datasets</a></li>
+<li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="12" data-path="citation-contact.html"><a href="citation-contact.html"><i class="fa fa-check"></i><b>12</b> Citation &amp; Contact</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -200,8 +202,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="example-datasets" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">Chapter 8</span> Example Datasets<a href="example-datasets.html#example-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="example-datasets" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Example Datasets<a href="example-datasets.html#example-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Below are three example datasets that can be used for exploring population-level cancer statistics in CaRDO. These datasets are designed to illustrate how cancer incidence, mortality, and population data should be structured and how they will be visualised in CaRDO.</p>
 <p><a href="data/CaRDO_Inc_Example.csv">Cancer Incidence Dataset</a>: An example dataset containing cancer <em>diagnoses</em> by cancer type, year, sex and age group.</p>
 <p><a href="data/CaRDO_Mrt_Example.csv">Cancer Mortality Dataset</a>: An example dataset containing cancer <em>deaths</em> by cancer type, year, sex and age group.</p>
@@ -215,7 +217,7 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="quick-setup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="updating-your-dashboard.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -247,7 +249,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-example.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-example.Rmd",
 "text": "Edit"
 },
 "history": {

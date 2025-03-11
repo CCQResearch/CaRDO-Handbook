@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Build Your Dashboard | The CaRDO Handbook</title>
+  <title>Chapter 4 Expand Your Dashboard | The CaRDO Handbook</title>
   <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
 The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Build Your Dashboard | The CaRDO Handbook" />
+  <meta property="og:title" content="Chapter 4 Expand Your Dashboard | The CaRDO Handbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
@@ -19,7 +19,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="github-repo" content="https://github.com/CCQResearch/CaRDO" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Build Your Dashboard | The CaRDO Handbook" />
+  <meta name="twitter:title" content="Chapter 4 Expand Your Dashboard | The CaRDO Handbook" />
   
   <meta name="twitter:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
@@ -35,8 +35,8 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="expand-your-dashboard.html"/>
-<link rel="next" href="publishing.html"/>
+<link rel="prev" href="data-requirements.html"/>
+<link rel="next" href="build-your-dashboard.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -202,63 +202,138 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="build-your-dashboard" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Build Your Dashboard<a href="build-your-dashboard.html#build-your-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>If you’ve made it this far, well done! You’re now ready to create a CaRDO dashboard.</p>
-<p><strong>Step 1</strong>. Open RStudio</p>
-<p><strong>Step 2</strong>. Set your working directory (optional)</p>
-<p>This is where you want to save your CaRDO dashboard application. You can set your working directory by typing the following command into the RStudio console – <em>specifying your directory between the quotations.</em> For data security reasons, we recommend setting your R working directory to a local drive that is <em>not</em> synced to a cloud service. This precaution helps prevent any (very unlikely) data exposure or loss.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="build-your-dashboard.html#cb1-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/path/to/my/directory&quot;</span>)<span class="st">`</span></span></code></pre></div>
-<p>Alternatively, you can set the working directory using RStudio’s menu system.</p>
-<p><img src="images/R%20working%20directory.png" width="100%" style="padding:10px; border:2px solid;" /></p>
+<div id="expand-your-dashboard" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Expand Your Dashboard<a href="expand-your-dashboard.html#expand-your-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="cancer-mortality-data" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Cancer mortality data<a href="expand-your-dashboard.html#cancer-mortality-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you have cancer mortality data, CaRDO will add a mortality statistics page to your dashboard. The data requirements and processes for loading cancer mortality data are identical to those we’ve described for cancer incidence data.</p>
+<ol style="list-style-type: decimal">
+<li>You must have a single column for each variable and outcome you wish to report, and each row in your dataset should correspond to a unique combination of each variable.</li>
+<li>Cancer-type values must be coded as you wish them to be displayed</li>
+<li>Cancer deaths must be aggregated by 5-year age groups, with age groups coded numerically from 1 – 18.</li>
+</ol>
+<p>The interface will ask you to load in a cancer incidence and mortality file separately. However, whether you store mortality data in a separate data file, or as an additional column in your incidence data file (and load the file twice) does not matter.</p>
+</div>
+<div id="age-standardised-rates-population-data" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Age-standardised rates – population data<a href="expand-your-dashboard.html#age-standardised-rates-population-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="display: flex; justify-content: space-between;">
+<div style="float: left; width: 45%;">
+<p>If you wish to report age-standardised cancer rates, you must provide a population file that corresponds to your registry or organisation’s catchment area. Population data should be organised by year, 5-year age groups and sex, and otherwise be structured the same as your incidence data. See example below (variable names do not matter).</p>
+</div>
+<div style="float: right; width: 50%;">
+<table class="table table-condensed table-striped" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:right;">
+Sex
+</th>
+<th style="text-align:right;">
+Age.group
+</th>
+<th style="text-align:right;">
+Population
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+6332
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2004
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7541
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+8544
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+9198
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+12632
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="other-data-details-to-note-1" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Other data details to note<a href="expand-your-dashboard.html#other-data-details-to-note-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>CaRDO will calculate age-standardised rates using a standard population that you will specify from a list of options. The default standard population is the <a href="https://seer.cancer.gov/stdpopulations/world.who.html">World Standard Population</a></li>
+<li>As with incidence and mortality, it is not necessary that your population file contains population data for persons.</li>
+<li>Rates will be suppressed where low count data has been suppressed.</li>
+</ol>
 <p><br>
-<strong>Step 3</strong>. Install the required R packages.</p>
-<p>CaRDO relies on a few essential R packages that are not included with the CaRDO package to function properly. The required packages are:</p>
-<ul>
-<li>DevTools</li>
-<li>Tidyverse</li>
-<li>Plotly</li>
-<li>Markdown</li>
-</ul>
-<p>(<em>If you already have these packages installed, skip to step 4</em>)</p>
-<p>To install packages, copy and paste the following code into your RStudio console.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="build-your-dashboard.html#cb2-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb2-2"><a href="build-your-dashboard.html#cb2-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb2-3"><a href="build-your-dashboard.html#cb2-3" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;plotly&quot;</span>)</span>
-<span id="cb2-4"><a href="build-your-dashboard.html#cb2-4" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;markdown&quot;</span>)</span></code></pre></div>
+Now you have everything ready to <a href="build-your-dashboard.html#build-your-dashboard">Build Your Dashboard</a></p>
 <p><br>
-<strong>Step 4</strong> Download and install CaRDO</p>
-<p>Paste the following code into your RStudio console.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="build-your-dashboard.html#cb3-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;https://github.com/CCQResearch/CaRDO&quot;</span>)</span></code></pre></div>
-<p><br>
-<strong>Step 5</strong> Create your dashboard</p>
-<p>Run CaRDO by pasting the following command into the RStudio console</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="build-your-dashboard.html#cb4-1" tabindex="-1"></a>CaRDO<span class="sc">::</span><span class="fu">create_dashboard</span>()</span></code></pre></div>
-<p><strong>Step 6</strong>. Follow the prompts and build your dashboard</p>
-<ul>
-<li>Load your data</li>
-<li>Specify your variables</li>
-<li>Personalise your dashboard</li>
-</ul>
-<p><strong>Step 7</strong>. Run your dashboard application</p>
-<p>Once you’ve finished the setup, CaRDO will provide you with a local file path (<em>your R working directory</em>) to your dashboard application. Follow the path and open the ‘app’ file - this is your CaRDO application. Run the R code by clicking ‘Run’ in the top right.</p>
-<p><img src="images/app%20location.png" width="80%" style="padding:10px; border:2px solid;" /></p>
-<p><br>
-You’ve done it! Start exploring your data by cycling through the available filters. If you ran into any problems, or have any questions or concerns, please reach out to us at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a>.</p>
-<p>In the next section we’ll guide you through <a href="publishing.html#publishing">Publishing</a> your CaRDO dashboard.</p>
-<p><br>
-Note: <em>RStudio may issue a warning if you do not have RTools installed. The warning can be dismissed in this instance - RTools is not required for CaRDO.</em></p>
-<p><br>
-<span style="font-size:25px;"><a href="publishing.html#publishing">Publishing</a></span></p>
+<span style="font-size:25px;"><a href="build-your-dashboard.html#build-your-dashboard">Build Your Dashboard</a></span></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="expand-your-dashboard.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="publishing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-requirements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="build-your-dashboard.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -289,7 +364,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-build.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-expand.Rmd",
 "text": "Edit"
 },
 "history": {
