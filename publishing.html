@@ -211,22 +211,26 @@ div.csl-indent {
 <div id="publishing-with-shinyapps.io" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Publishing with Shinyapps.io<a href="publishing.html#publishing-with-shinyapps.io" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A detailed guide to setting up a Shinyapps.io account and deploying your dashboard is published <a href="https://shiny.posit.co/r/articles/share/shinyapps/">here</a>. Deployment instructions are also provided upon account setup. Below we provide a summary of the key steps to follow.</p>
-<p><strong>Step 1 - rsconnect</strong></p>
+<p><br>
+<strong>Step 1 - rsconnect</strong></p>
 <p>Shinyapps.io requires the latest version of rsconnect. Install the <code>rsconnect</code> package by running the following command in your Rstudio console.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="publishing.html#cb5-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rsconnect&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="publishing.html#cb6-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rsconnect&#39;</span>)</span></code></pre></div>
 <p>Once installed, load <code>rsconnect</code> into your R session.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="publishing.html#cb6-1" tabindex="-1"></a><span class="fu">library</span>(rsconnect)</span></code></pre></div>
-<p><strong>Step 2 - setup account</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="publishing.html#cb7-1" tabindex="-1"></a><span class="fu">library</span>(rsconnect)</span></code></pre></div>
+<p><br>
+<strong>Step 2 - setup account</strong></p>
 <p>To publish your dashboard through <a href="https://www.shinyapps.io/">shinyapps.io</a> you will need to sign up for an account. By default, all Shinyapps.io accounts are free with the option to upgrade to a paid service (more on this later).</p>
 <p>The first time you sign in, Shinyapps.io will prompt you to specify an account name. Shinyapps.io uses the account name as the domain name for all of your applications. <span style="color:red;">Important:</span> Shinyapps.io uses the account name you specify as the domain name for all your applications. Meaning, your account name will appear in the URL for your dashboard - for this reason, we recommend making your account name something relevant to your registry or organisation.</p>
 <p><img src="images/publish1_account.jpeg" width="100%" style="padding:10px; border:2px solid;" /></p>
-<p><strong>Step 3 - authorize</strong></p>
+<p><br>
+<strong>Step 3 - authorize</strong></p>
 <p>Once you have setup an account, you will need to configure the <code>rsconnect</code> package to authorize your account. Shinyapps.io provides instructions on how to do this once you’ve setup an account. Copy and paste the R code shown in field into your R console and run the code.</p>
 <p><img src="images/token.jpeg" width="100%" style="padding:10px; border:2px solid;" /></p>
-<p><strong>Step 4 - deploy/publish</strong></p>
+<p><br>
+<strong>Step 4 - deploy/publish</strong></p>
 <p>You’re now ready to publish your CaRDO dashboard - there are two methods.</p>
 <p>You may run the following code, or alternatively, you may click the publish icon ( <img src="images/publishIcon.png" width="30" height="30" style="vertical-align:middle;"> ) in the top right corner, next to run.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="publishing.html#cb7-1" tabindex="-1"></a>rsconnect<span class="sc">::</span><span class="fu">deployApp</span>(<span class="st">&#39;path/to/your/app&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="publishing.html#cb8-1" tabindex="-1"></a>rsconnect<span class="sc">::</span><span class="fu">deployApp</span>(<span class="st">&#39;path/to/your/app&#39;</span>)</span></code></pre></div>
 <p>Select the files to be published: Broadly, these will include your app.R file, any other data files, and any image and css (www folder) files. The specific files required for CaRDO are the following:</p>
 <ul>
 <li>app.R</li>
@@ -239,11 +243,17 @@ div.csl-indent {
 <p><img src="images/publish_files.png" width="100%" style="padding:10px; border:2px solid;" /></p>
 <p>Give your dashboard a name (this will appear in the URL!) and hit Publish - this will take a moment.</p>
 <p>And you’re done. Your cancer dashboard is ready to share!</p>
-<p>Thank you for using CaRDO</p>
-<p>Please reach out to us at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a> if you have any questions, concerns or feedback - we’d love to hear from you.</p>
+<p><br></p>
+<div id="pricing" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Pricing<a href="publishing.html#pricing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Shinyapps.io has a range of paid plans to suit different needs when deploying Shiny applications. By default, users can start with the free tier, which allows limited deployment with restrictions on active hours and resources. You can find more details on pricing tiers and available services <a href="https://www.shinyapps.io/">here</a></p>
+<p><br>
+Thank you for using CaRDO.</p>
+<p>Again, please reach out to us at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a> if you have any questions, concerns or feedback - we’d love to hear from you.</p>
 <p><br>
 <span style="font-size:25px;"><a href="updating-your-dashboard.html#updating-your-dashboard">Updating Your Dashboard</a></span></p>
 
+</div>
 </div>
 </div>
             </section>

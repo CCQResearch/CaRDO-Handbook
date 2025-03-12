@@ -14,6 +14,7 @@ other-data-details-to-note-1
 build-your-dashboard
 publishing
 publishing-with-shinyapps.io
+pricing
 quick-setup
 updating-your-dashboard
 example-datasets
@@ -23,5 +24,6 @@ lifetime-risk
 incidence-mortality-trends
 sex-specific-cancers
 data-privacy
+packages
 references
 citation-contact
