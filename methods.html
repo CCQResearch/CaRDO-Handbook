@@ -182,6 +182,7 @@ div.csl-indent {
 <li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
 <li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
 <li class="chapter" data-level="12" data-path="citation-contact.html"><a href="citation-contact.html"><i class="fa fa-check"></i><b>12</b> Citation &amp; Contact</a></li>
+<li class="chapter" data-level="13" data-path="survival.html"><a href="survival.html"><i class="fa fa-check"></i><b>13</b> Survival</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -208,11 +209,12 @@ div.csl-indent {
 <h2><span class="header-section-number">10.1</span> Age-standardized rates<a href="methods.html#age-standardized-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Age-standardised rates attempt to adjust for variation in age structures in different populations (either different geographical areas or the same population across time). There are two methods of age-standardisation – direct and indirect.</p>
 <p>All cancer diagnoses and cancer deaths trends were calculated using directly standardised rates. The method involves applying age-specific rates from the population of interest (i.e. your catchment) to a standard population, which in CaRDO is the <a href="https://seer.cancer.gov/stdpopulations/world.who.html" target="_blank">World Standard Population</a> by default. Five-year age groups up to 85-years-and-above were used for all age-standardized rate calculations.</p>
+<p>Note: if not all 18 age groups are supplied, the standard population is re-weighted according to your supplied age groups.</p>
 </div>
 <div id="lifetime-risk" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Lifetime risk<a href="methods.html#lifetime-risk" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Cumulative risk is a measure used to estimate the risk of developing or dying of cancer up to a specific age. It takes into account the removal of persons from the population of interest who have already been diagnosed with or died from cancer. Commonly expressed as a ‘1 in n’ proportion, the cumulative risk is calculated as:</p>
-<p><span class="math display">\[n = \frac{1}{1-\exp(-5\sum a_j\times\frac{100}{100000})}\]</span></p>
+<p><span class="math display">\[n = \frac{1}{1-\exp(-5\sum a_j\times\frac{100}{100,000})}\]</span></p>
 <p>where <span class="math inline">\(a_j\)</span> are the age-specific rates (5-year age groups) per 100,000 for ages 0 – to your specific age group, for example 85. CaRDO provides the cumulative risk up to the age 85 as an approximation of lifetime risk. An x in 100 variation is also supplied, calculated as the inverse of the cumulative risk multiplied by 100. These calculations assume that the person experiences the current age-specific risk rates up to the age specified (e.g. 85), so do not account for any specific risk factors (such as smoking).</p>
 </div>
 <div id="incidence-mortality-trends" class="section level2 hasAnchor" number="10.3">
@@ -226,15 +228,15 @@ div.csl-indent {
 </div>
 <div id="data-privacy" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">10.5</span> Data Privacy<a href="methods.html#data-privacy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Data loaded into CaRDO is stored locally on your computer, and all analyses are performed locally. Your data will not leave your computer while using CaRDO – CaRDO has been designed with data privacy as a top priority.</p>
-<p>The process of loading data into CaRDO is no different to loading data into RStudio. In fact, that is all that is happening - CaRDO loads data into the RStudio environment and carries out data processing locally on your machine. It is perfectly safe to load sensitive data into CaRDO as you would into any other data software. Once CaRDO has finished data processing, it will create a series of data files used for the creation of the dashboard. We encourage you to inspect these data files if you have any concerns. Suppression of sensitive data (low counts) is discussed in the <a href="data-requirements.html#data-requirements">Data Requirements</a> section.</p>
-<p><span style="color:red;">Important:</span> If you choose to publish your dashboard (e.g., share it online), data will be uploaded to the <strong>cloud</strong> (made public) at the resolution that it appears in the dashboard. It is your responsibility to ensure that all displayed data is appropriate for sharing before publishing publicly.</p>
+<p>Data loaded into CaRDO areis stored locally on your computer, and all analyses are performed locally. Your data will not leave your computer while using CaRDO – CaRDO has been designed with data privacy as a top priority.
+The process of loading data into CaRDO is no different to loading data into RStudio on your local computer. In fact, that is what all that is happening - CaRDO loads data into the RStudio environment and carries out data processing locally on your machine using R. It is perfectly safe to load sensitive data into CaRDO as you would into any other data software. Once CaRDO has finished data processing, it will create a series of summary data files used for the creation of the dashboard. We encourage you to inspect these data files if you have any concerns. Suppression of sensitive data (low counts) is discussed in the <a href="data-requirements.html#data-requirements">Data Requirements</a> section.</p>
+<p><span style="color:red;">Important:</span> If you choose to publish your dashboard (e.g., share it online), data will be uploaded to the <strong>internet</strong> (made public) at the resolution that it appears in the CaRDO dashboard. It is your responsibility to ensure that all displayed data is appropriate for sharing before publishing publicly.</p>
 </div>
 <div id="packages" class="section level2 hasAnchor" number="10.6">
 <h2><span class="header-section-number">10.6</span> Packages<a href="methods.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>CaRDO was built using the following R packages:</p>
 <ul>
-<li><code>Shiny</code> software package for R (<span class="citation">Chang et al. (<a href="references.html#ref-shiny">2025</a>)</span>)</li>
+<li><code>shiny</code> software package for R (<span class="citation">Chang et al. (<a href="references.html#ref-shiny">2025</a>)</span>)</li>
 <li><code>tidyverse</code> (<span class="citation">Wickham et al. (<a href="references.html#ref-tidy">2019</a>)</span>)</li>
 <li><code>bslib</code> (<span class="citation">Sievert, Cheng, and Aden-Buie (<a href="references.html#ref-bslib">2025</a>)</span>)</li>
 <li><code>shinywidgets</code> (<span class="citation">Perrier, Meyer, and Granjon (<a href="references.html#ref-widgets">2025</a>)</span>)</li>
@@ -284,8 +286,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/09-methods.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
@@ -295,7 +297,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
