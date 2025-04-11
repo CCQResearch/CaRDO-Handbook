@@ -1,6 +1,10 @@
 about
 get-started
 r-rstudio
+install-cardo
+cardo-example
+example-datasets
+launch-cardo
 data-requirements
 the-basic-dashboard
 data-structure
@@ -9,15 +13,13 @@ year-age-groups
 other-data-details-to-note
 expand-your-dashboard
 cancer-mortality-data
-age-standardised-rates-population-data
+age-standardised-rates---population-data
 other-data-details-to-note-1
-build-your-dashboard
 publishing
 publishing-with-shinyapps.io
 pricing
 quick-setup
 updating-your-dashboard
-example-datasets
 methods
 age-standardized-rates
 lifetime-risk
@@ -25,6 +27,6 @@ incidence-mortality-trends
 sex-specific-cancers
 data-privacy
 packages
+example-datasets-1
 references
 citation-contact
-survival

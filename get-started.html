@@ -36,7 +36,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="data-requirements.html"/>
+<link rel="next" href="install-cardo.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -172,17 +172,16 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
 <li class="chapter" data-level="2" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>2</b> Get Started</a></li>
-<li class="chapter" data-level="3" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>3</b> Data Requirements</a></li>
-<li class="chapter" data-level="4" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>4</b> Expand Your Dashboard</a></li>
-<li class="chapter" data-level="5" data-path="build-your-dashboard.html"><a href="build-your-dashboard.html"><i class="fa fa-check"></i><b>5</b> Build Your Dashboard</a></li>
-<li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
-<li class="chapter" data-level="7" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>7</b> Quick setup</a></li>
-<li class="chapter" data-level="8" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>8</b> Updating Your Dashboard</a></li>
-<li class="chapter" data-level="9" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>9</b> Example Datasets</a></li>
+<li class="chapter" data-level="3" data-path="install-cardo.html"><a href="install-cardo.html"><i class="fa fa-check"></i><b>3</b> Install CaRDO</a></li>
+<li class="chapter" data-level="4" data-path="cardo-example.html"><a href="cardo-example.html"><i class="fa fa-check"></i><b>4</b> CaRDO Example</a></li>
+<li class="chapter" data-level="5" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>5</b> Data Requirements</a></li>
+<li class="chapter" data-level="6" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>6</b> Expand Your Dashboard</a></li>
+<li class="chapter" data-level="7" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>7</b> Publishing</a></li>
+<li class="chapter" data-level="8" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>8</b> Quick setup</a></li>
+<li class="chapter" data-level="9" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>9</b> Updating Your Dashboard</a></li>
 <li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
 <li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
 <li class="chapter" data-level="12" data-path="citation-contact.html"><a href="citation-contact.html"><i class="fa fa-check"></i><b>12</b> Citation &amp; Contact</a></li>
-<li class="chapter" data-level="13" data-path="survival.html"><a href="survival.html"><i class="fa fa-check"></i><b>13</b> Survival</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -205,10 +204,11 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="get-started" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Get Started<a href="get-started.html#get-started" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This Handbook is a detailed guide to building your own CaRDO dashboard. Setting up your CaRDO dashboard is a simple and straightforward process, and this guide will walk you through it step by step. Our goal is to make it easy for you to visualize and publish your cancer data with confidence.</p>
-<p>CaRDO is an R package and requires R and RStudio to work. If you’re new to these software, don’t stress, we walk you through installation and setup of these software below. If you already have R and RStudio installed, jump ahead to <a href="data-requirements.html#data-requirements">Data Requirements</a>.</p>
+<hr>
+<p>This Handbook is a detailed guide to building your own CaRDO dashboard. Setting up your CaRDO dashboard is a simple and straightforward process, and this guide will walk you through it step by step. Our goal is to make it easy for you to visualize and publish your cancer data with confidence. If at any point you run into issues or have any questions or concerns, please reach out to us at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a>.</p>
+<p>CaRDO is an R package and requires R and RStudio to work. If you’re new to these software, don’t stress, we walk you through the installation and setup of these software below. If you already have R and RStudio installed then jump ahead to <a href="install-cardo.html#install-cardo">Install CaRDO</a></p>
 <ul>
-<li>If you prefer learning by doing and only referring to manuals as a last resort, you can follow the no-frills <a href="quick-setup.html#quick-setup">Quick Setup</a>. However, we don’t recommend this approach for anyone new to R.</li>
+<li>If you prefer learning by doing and only referring to manuals as a last resort, you can follow the bare bones <a href="quick-setup.html#quick-setup">Quick Setup</a>. However, we do <em>not</em> recommend this approach for first time CaRDO users.</li>
 </ul>
 <div id="r-rstudio" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> R &amp; RStudio<a href="get-started.html#r-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -217,12 +217,13 @@ div.csl-indent {
 <li><p>First download R software <a href="https://cran.rstudio.com/" target="_blank">here</a> and install. Being mindful to download the correct version for your computer’s operating system (Windows, Mac etc.). Once downloaded, run the R executable file and accept the default (recommended) installation options.</p></li>
 <li><p>Once R is installed, download the free version of RStudio <a href="https://posit.co/download/rstudio-desktop/#download" target="_blank">here</a> and install. Open RStudio to confirm that it works. Note, if you are working within an organisation, you may need to contact your IT team to install both R and RStudio.</p></li>
 </ol>
-<p>What are these software? Base R is not very user-friendly, and we won’t use it again here. However, it is necessary for <strong>RStudio</strong> to work. Think of RStudio as a program like Microsoft Word – but instead of helping you write in English, it helps you write in R. RStudio is far more user-friendly, and we will use it to build your CaRDO dashboard.</p>
-<p>Note: R and RStudio are case sensitive. Any code detailed here should be copied into RStudio <em>exactly</em> as it appears here.
-For readers wishing to learn more about R and RStudio, detailed learning material – well beyond what is required for CaRDO – is available <a href="https://rstudio-education.github.io/hopr/index.html" target="_blank">here</a>.</p>
-<p>We’ll jump out of RStudio for the moment and in the next section discuss <a href="data-requirements.html#data-requirements">Data Requirements</a> to build a CaRDO dashboard.</p>
+<p>What are these software? Base R is not very user-friendly, and we won’t use it again here. However, it is necessary for <strong>RStudio</strong> to work. Think of RStudio as a program like Microsoft Word – but instead of helping you write language, it helps you write code in R. RStudio is far more user-friendly, and we will use it to build your CaRDO dashboard.</p>
+<p>The RStudio console is where you can type and run R commands interactively. It displays the output of your code, including results, warnings, and error messages, helping you test and explore R functions in real time. This is where we will run code to setup and build a CaRDO dashboard.</p>
+<p><img src="images/console.png" width="100%" style="padding:10px; border:2px solid;" /></p>
+<p>Note: <em>R and RStudio are case sensitive. Any code detailed here should be copied into RStudio exactly as it appears here. For readers wishing to learn more about R and RStudio, detailed learning material – well beyond what is required for CaRDO – is available <a href="https://rstudio-education.github.io/hopr/index.html" target="_blank">here</a>.</em></p>
+<p>Now that you have RStudio installed and working, lets <a href="install-cardo.html#install-cardo">Install CaRDO</a>.</p>
 <p><br>
-<span style="font-size:25px;"><a href="data-requirements.html#data-requirements">Data Requirements</a></span></p>
+<span style="font-size:22px;"><a href="install-cardo.html#install-cardo">Install CaRDO</a></span></p>
 
 </div>
 </div>
@@ -232,7 +233,7 @@ For readers wishing to learn more about R and RStudio, detailed learning materia
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-requirements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="install-cardo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

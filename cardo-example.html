@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 References | The CaRDO Handbook</title>
+  <title>Chapter 4 CaRDO Example | The CaRDO Handbook</title>
   <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
 The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 References | The CaRDO Handbook" />
+  <meta property="og:title" content="Chapter 4 CaRDO Example | The CaRDO Handbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
@@ -19,7 +19,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="github-repo" content="https://github.com/CCQResearch/CaRDO" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 References | The CaRDO Handbook" />
+  <meta name="twitter:title" content="Chapter 4 CaRDO Example | The CaRDO Handbook" />
   
   <meta name="twitter:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
@@ -35,8 +35,8 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="methods.html"/>
-<link rel="next" href="citation-contact.html"/>
+<link rel="prev" href="install-cardo.html"/>
+<link rel="next" href="data-requirements.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -202,49 +202,90 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 hasAnchor" number="11">
-<h1><span class="header-section-number">Chapter 11</span> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-shiny" class="csl-entry">
-Chang, Winston, Joe Cheng, JJ Allaire, Carson Sievert, Barret Schloerke, Yihui Xie, Jeff Allen, Jonathan McPherson, Alan Dipert, and Barbara Borges. 2025. <em>Shiny: Web Application Framework for r</em>. <a href="https://shiny.posit.co/">https://shiny.posit.co/</a>.
+<div id="cardo-example" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> CaRDO Example<a href="cardo-example.html#cardo-example" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<hr>
+<div id="example-datasets" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Example Datasets<a href="cardo-example.html#example-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Below are three example datasets that we will use to build an example CaRDO dashboard. These datasets are designed to illustrate how cancer incidence, mortality, and population data should be structured and how they will be visualised in CaRDO. Download the datasets and store them on your computer - in a moment we’ll load these datasets into CaRDO.</p>
+<p><a href="data/CaRDO_Inc_Example.csv">Cancer Incidence Dataset</a>: An example dataset containing cancer <em>diagnoses</em> by cancer type, year, sex, and 5-year age group.</p>
+<p><a href="data/CaRDO_Mrt_Example.csv">Cancer Mortality Dataset</a>: An example dataset containing cancer <em>deaths</em> by cancer type, year, sex, and 5-year age group.</p>
+<p><a href="data/CaRDO_Pop_Example.csv">Population Dataset</a>: An example dataset containing <em>population</em> estimates by year, sex, and 5-year age group, which can be used for calculating age-standardised cancer rates.</p>
+<ul>
+<li><em>These datasets are fictional and do not reflect real cancer data</em>
+<br></li>
+</ul>
 </div>
-<div id="ref-segmented" class="csl-entry">
-Muggeo, Vito M. R. 2008. <span>“Segmented: An r Package to Fit Regression Models with Broken-Line Relationships.”</span> <em>R News</em> 8 (1): 20–25. <a href="https://cran.r-project.org/doc/Rnews/">https://cran.r-project.org/doc/Rnews/</a>.
-</div>
-<div id="ref-widgets" class="csl-entry">
-Perrier, Victor, Fanny Meyer, and David Granjon. 2025. <em>shinyWidgets: Custom Inputs Widgets for Shiny</em>. <a href="https://CRAN.R-project.org/package=shinyWidgets">https://CRAN.R-project.org/package=shinyWidgets</a>.
-</div>
-<div id="ref-plotly" class="csl-entry">
-Sievert, Carson. 2020. <em>Interactive Web-Based Data Visualization with r, Plotly, and Shiny</em>. Chapman; Hall/CRC. <a href="https://plotly-r.com">https://plotly-r.com</a>.
-</div>
-<div id="ref-bslib" class="csl-entry">
-Sievert, Carson, Joe Cheng, and Garrick Aden-Buie. 2025. <em>Bslib: Custom ’Bootstrap’ ’Sass’ Themes for ’Shiny’ and ’Rmarkdown’</em>. <a href="https://CRAN.R-project.org/package=bslib">https://CRAN.R-project.org/package=bslib</a>.
-</div>
-<div id="ref-tidy" class="csl-entry">
-Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain Françoi, Garrett Grolemun, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
-</div>
-<div id="ref-mgcv" class="csl-entry">
-Wood, S. N. 2003. <span>“Thin-Plate Regression Splines.”</span> <em>Journal of the Royal Statistical Society (B)</em> 65 (1): 95–114.
-</div>
-<div id="ref-markdown" class="csl-entry">
-Xie, Yihui, JJ Allaire, and Jeffrey Horner. 2024. <em>Markdown: Render Markdown with ’Commonmark’</em>. <a href="https://CRAN.R-project.org/package=markdown">https://CRAN.R-project.org/package=markdown</a>.
-</div>
-<div id="ref-breakpoints_func" class="csl-entry">
-Zeileis, Achim, Christian Kleiber, Walter Krämer, and Kurt Hornik. 2003. <span>“Testing and Dating of Structural Changes in Practice.”</span> <em>Computational Statistics &amp; Data Analysis</em> 44 (1–2): 109–23. <a href="https://doi.org/10.1016/S0167-9473(03)00030-6">https://doi.org/10.1016/S0167-9473(03)00030-6</a>.
-</div>
-<div id="ref-strucchange" class="csl-entry">
-Zeileis, Achim, Friedrich Leisch, Kurt Hornik, and Christian Kleiber. 2002. <span>“Strucchange: An r Package for Testing for Structural Change in Linear Regression Models.”</span> <em>Journal of Statistical Software</em> 7 (2): 1–38. <a href="https://doi.org/10.18637/jss.v007.i02">https://doi.org/10.18637/jss.v007.i02</a>.
-</div>
-</div>
+<div id="launch-cardo" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Launch CaRDO<a href="cardo-example.html#launch-cardo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Step 1</strong>. Open RStudio.</p>
+<p><br>
+<strong>Step 2</strong>. Set your working directory (optional).</p>
+<p>This is where you want to save your CaRDO dashboard application. You can set your working directory by typing the following command into the RStudio console – <em>specifying your directory between the quotations.</em> For data security reasons, we recommend setting your working directory to a local drive that is <em>not</em> regularly synced to a cloud service. This precaution helps prevent any (extremely unlikely) data exposure.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="cardo-example.html#cb3-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/path/to/my/directory&quot;</span>)<span class="st">`</span></span></code></pre></div>
+<p>Alternatively, you can set the working directory using RStudio’s menu system</p>
+<ul>
+<li><em>Session –&gt; Set Working Directory –&gt; Choose Directory…</em></li>
+</ul>
+<p><img src="images/R%20working%20directory.png" width="100%" style="padding:10px; border:2px solid;" /></p>
+<p><br>
+<strong>Step 3</strong>. Launch CaRDO.</p>
+<p>To laucnh CaRDO, copy and paste the following code into your RStudio console and press Enter/Return. This step will open the CaRDO user interface in a web browser.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="cardo-example.html#cb4-1" tabindex="-1"></a>CaRDO<span class="sc">::</span><span class="fu">create_dashboard</span>()</span></code></pre></div>
+<p><br>
+<strong>Step 4</strong>. Welcome to CaRDO.</p>
+<p>CaRDO begins with a disclaimer. The information is a summary of <a href="data-requirements.html#data-requirements">Data Requirements</a> and <a href="methods.html#data-privacy">Data Privacy</a> details. We recommend reading these sections of the handbook in detail <strong>before loading your own data</strong> into CaRDO. However, for now, click <strong>Okay, I understand</strong> then <strong>Next</strong>.</p>
+<p><br>
+<strong>Step 5</strong>. Load datasets.</p>
+<p>Select <strong>Incidence</strong>, <strong>Mortality</strong> and <strong>Population</strong> and load in the three example datasets previously downloaded. All datasets you wish to load into CaRDO must be done at this step - all at once. Select an appropriate standard population for rate calculations then click <strong>Next</strong></p>
+<ul>
+<li><em>If you’re at this step with your own data, select only those datasets that you have available.</em></li>
+</ul>
+<p><img src="images/dataload.png" width="100%" style="padding:10px; border:2px solid;" /></p>
+<p><br>
+<strong>Step 6</strong>. Specify your variables</p>
+<p>Rather than force users to label their variables a specific way, CaRDO asks users to match their supplied variables with the key CaRDO indicator variables. Match each CaRDO variable listed on the left with the variables within each dataset - this step must be performed separately for each dataset loaded into CaRDO. Take care at this step to ensure that the correct variables are specified.</p>
+<ul>
+<li><em>Your variable names will appear in the drop down fields</em></li>
+</ul>
+<p><img src="images/variables.png" width="100%" style="padding:10px; border:2px solid;" /></p>
+<p><br>
+<strong>Step 7</strong>. Finalise your dashboard.</p>
+<p>Give your dashboard a title and specify the specific area that your cancer data covers. For example, is your data from a specific <strong>country</strong>, <strong>state or province</strong>, <strong>city</strong> or <strong>health region</strong>?</p>
+<p>On this page, you are also asked to specify whether the loaded cancer incidence and mortality datasets contain an ‘all cancers’ category. This refers to a row/rows that sum up the total number of cancer diagnoses or deaths for all cancers combined - often ladeled as <em>‘All cancers’</em>. This is different from only having individual cancer types like lung or breast cancer in the dataset. It’s important to know because it affects how CaRDO will calculate totals and display summary statistics. We <strong>strongly</strong> recommend including an ‘All cancers’ category in your cancer datasets for reasons discussed further in the <a href="data-requirements.html#data-requirements">Data Requirements</a> section. The example cancer datasets contain an ‘All cancers’ category so we will leave ‘Yes’ selected.</p>
+<p>Finally, the suppression threshold allows users to suppress any values in the dataset below the specified value (if this hasn’t already been done during data preparation). This feature is designed as a safety mechanism — a final layer of protection in case suppression wasn’t handled beforehand loading your data. Leave this at 5 for now and click <strong>Create Dashboard</strong>.</p>
+<p><img src="images/finalise.png" width="100%" style="padding:10px; border:2px solid;" /></p>
+<p><br>
+<strong>Step 8</strong>. Launch CaRDO</p>
+<p>CaRDO will provide you with code to open your dashboard application (.app) file. Follows these <em>exact</em> steps.</p>
+<ol style="list-style-type: decimal">
+<li><p>Click <strong>Copy to clipboard</strong></p></li>
+<li><p>Click <strong>Exit</strong> CaRDO.</p></li>
+</ol>
+<p>3, Paste the code into your R console and press Enter/Return.</p>
+<ul>
+<li><em>Be sure to exit the CaRDO interface <strong>before</strong> running the code, as R won’t execute the code while the CaRDO interface is still open!</em></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="cardo-example.html#cb5-1" tabindex="-1"></a><span class="fu">file.edit</span>(<span class="st">&#39;your/working/directory/app.R&#39;</span>)</span></code></pre></div>
+<p><br>
+Alternatively, CaRDO will provide you with a local file path (<em>your R working directory</em>) to your dashboard application. Follow the path and open the ‘<strong>app</strong>’ file - this is your CaRDO application. Run the R code by clicking ‘Run’ in the top right of the R console.</p>
+<p><img src="images/app%20location.png" width="80%" style="padding:10px; border:2px solid;" /></p>
+<hr>
+<p>You’ve done it! Start exploring the dashboard by cycling through the available filters. In the next section, we’ll guide you through the specific <a href="data-requirements.html#data-requirements">Data Requirements</a> for building a CaRDO dashboard using your own data.</p>
+<p><br>
+<span style="font-size:22px;"><a href="data-requirements.html#data-requirements">Data Requirements</a></span></p>
+<p><br>
+Finished building your CaRDO dashboard with your own data? Learn how to publish it <a href="publishing.html#publishing">here</a>.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="citation-contact.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="install-cardo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-requirements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Data Requirements | The CaRDO Handbook</title>
+  <title>Chapter 5 Data Requirements | The CaRDO Handbook</title>
   <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
 The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Data Requirements | The CaRDO Handbook" />
+  <meta property="og:title" content="Chapter 5 Data Requirements | The CaRDO Handbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
@@ -19,7 +19,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="github-repo" content="https://github.com/CCQResearch/CaRDO" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Data Requirements | The CaRDO Handbook" />
+  <meta name="twitter:title" content="Chapter 5 Data Requirements | The CaRDO Handbook" />
   
   <meta name="twitter:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
@@ -35,7 +35,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="get-started.html"/>
+<link rel="prev" href="cardo-example.html"/>
 <link rel="next" href="expand-your-dashboard.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -172,17 +172,16 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
 <li class="chapter" data-level="2" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>2</b> Get Started</a></li>
-<li class="chapter" data-level="3" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>3</b> Data Requirements</a></li>
-<li class="chapter" data-level="4" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>4</b> Expand Your Dashboard</a></li>
-<li class="chapter" data-level="5" data-path="build-your-dashboard.html"><a href="build-your-dashboard.html"><i class="fa fa-check"></i><b>5</b> Build Your Dashboard</a></li>
-<li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
-<li class="chapter" data-level="7" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>7</b> Quick setup</a></li>
-<li class="chapter" data-level="8" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>8</b> Updating Your Dashboard</a></li>
-<li class="chapter" data-level="9" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>9</b> Example Datasets</a></li>
+<li class="chapter" data-level="3" data-path="install-cardo.html"><a href="install-cardo.html"><i class="fa fa-check"></i><b>3</b> Install CaRDO</a></li>
+<li class="chapter" data-level="4" data-path="cardo-example.html"><a href="cardo-example.html"><i class="fa fa-check"></i><b>4</b> CaRDO Example</a></li>
+<li class="chapter" data-level="5" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>5</b> Data Requirements</a></li>
+<li class="chapter" data-level="6" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>6</b> Expand Your Dashboard</a></li>
+<li class="chapter" data-level="7" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>7</b> Publishing</a></li>
+<li class="chapter" data-level="8" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>8</b> Quick setup</a></li>
+<li class="chapter" data-level="9" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>9</b> Updating Your Dashboard</a></li>
 <li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
 <li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
 <li class="chapter" data-level="12" data-path="citation-contact.html"><a href="citation-contact.html"><i class="fa fa-check"></i><b>12</b> Citation &amp; Contact</a></li>
-<li class="chapter" data-level="13" data-path="survival.html"><a href="survival.html"><i class="fa fa-check"></i><b>13</b> Survival</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -203,12 +202,13 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-requirements" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Data Requirements<a href="data-requirements.html#data-requirements" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><span style="color:red;">Important:</span> Data loaded into CaRDO is stored locally on your computer, and all analyses are performed locally. Your data will not leave your computer while using CaRDO.</p>
+<div id="data-requirements" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Data Requirements<a href="data-requirements.html#data-requirements" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<hr>
+<p><span style="color:red;">Important:</span> Data loaded into CaRDO are stored locally on your computer, and all analyses are performed locally. Your data will <strong>not</strong> leave your computer while using CaRDO.</p>
 <p>Options to publish the dashboard you develop using CaRDO (e.g., share it online) are described later. If you do publish it, it is your responsibility to ensure that all data shown in the CaRDO dashboard is appropriate for sharing. See <a href="methods.html#data-privacy">data privacy</a> for more details.</p>
-<div id="the-basic-dashboard" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> The basic dashboard<a href="data-requirements.html#the-basic-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-basic-dashboard" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> The basic dashboard<a href="data-requirements.html#the-basic-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The type of CaRDO dashboard you’re able to create will depend on the breadth of data you have available.</p>
 <p>The simplest dashboard available is a display of cancer incidence count data, and the data necessary to generate this minimum dashboard are listed below.</p>
 <ul>
@@ -221,8 +221,8 @@ div.csl-indent {
 </ul>
 <p><em>Note: The specific names of these variables in your dataset do not matter, only that these data are available.</em></p>
 <p>More expansive dashboards are possible where additional variables are available, and we cover those options in <a href="expand-your-dashboard.html#expand-your-dashboard">Expand Your Dashboard</a>. But first, there are <strong>three</strong> key requirements for all cancer datasets loaded into CaRDO.</p>
-<div id="data-structure" class="section level3 hasAnchor" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Data structure<a href="data-requirements.html#data-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="data-structure" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Data structure<a href="data-requirements.html#data-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Your data <strong>must</strong> be in the following structure (variable names do not matter)</li>
 </ol>
@@ -267,7 +267,7 @@ Liver
 </tr>
 <tr>
 <td style="text-align:left;">
-Breast
+Breast (Female)
 </td>
 <td style="text-align:right;">
 52
@@ -310,7 +310,7 @@ Prostate
 2019
 </td>
 <td style="text-align:right;">
-9
+6
 </td>
 <td style="text-align:right;">
 1
@@ -318,16 +318,16 @@ Prostate
 </tr>
 <tr>
 <td style="text-align:left;">
-Breast
+All cancers
 </td>
 <td style="text-align:right;">
-11
+275
 </td>
 <td style="text-align:right;">
 2019
 </td>
 <td style="text-align:right;">
-6
+13
 </td>
 <td style="text-align:right;">
 2
@@ -336,20 +336,21 @@ Breast
 </tbody>
 </table>
 <p><br>
-You must have a single column for each variable and outcome you wish to report, and each row in your dataset should correspond to a unique combination of each variable. Click here for full <a href="example-datasets.html#example-datasets">Example Datasets</a></p>
+You must have a single column for each variable and outcome you wish to report, and each row in your dataset should correspond to a unique combination of each variable. Refer back to the <a href="cardo-example.html#example-datasets">Example Datasets</a> for further guidance.</p>
 </div>
-<div id="cancer-types" class="section level3 hasAnchor" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> Cancer types<a href="data-requirements.html#cancer-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="cancer-types" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Cancer types<a href="data-requirements.html#cancer-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol start="2" style="list-style-type: decimal">
 <li>Cancer-type values <strong>must</strong> be coded as you wish them to be displayed (see example above).</li>
 </ol>
-<p>For example, breast cancer should be coded as ‘Breast’ or ‘Breast cancer’ and not as a numerical value. Numerical coding will cause cancer types to display as numbers in the dashboard and be uninterpretable for users who don’t know the coding scheme.</p>
+<p>For example, liver cancer should be coded as ‘Liver’ or ‘Liver cancer’ and not as a numerical value. Numerical coding will cause cancer types to display as numbers in the dashboard and be uninterpretable for users who don’t know the coding scheme.</p>
 </div>
-<div id="year-age-groups" class="section level3 hasAnchor" number="3.1.3">
-<h3><span class="header-section-number">3.1.3</span> 5-year age groups<a href="data-requirements.html#year-age-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="year-age-groups" class="section level3 hasAnchor" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> 5-year age groups<a href="data-requirements.html#year-age-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol start="3" style="list-style-type: decimal">
-<li>Cancer counts must be aggregated by 5-year age groups, with age groups coded numerically from 1–18. You do not need cancer data for every age group, but supplied data must be coded according to the below table. For example, if you have no data for 0-4 years, your first (5-9 years) numerical age group must commence at 2.</li>
+<li>Cancer counts must be aggregated by 5-year age groups, with age groups coded numerically from 1–18. You do not need to supply data for every age group listed in the table below. However, any data you do provide must use the correct age group code, as defined in the table. For example, if you don’t have data for the 0–4 years age group (code 1), but you do have data for the 5–9 years group, it must still be coded as 2 — not 1.</li>
 </ol>
+<br>
 <div style="display: flex; justify-content: space-between;">
 <div style="float: left; width: 45%;">
 <table class="table table-condensed table-striped" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -516,7 +517,7 @@ Age.group.numeric
 <p><br></p>
 <p>Note, counts by 5-year age groups will NOT be displayed visually in the dashboard and will not be published online. CaRDO will only display and publish counts by the following broad age-groups.</p>
 <br>
-<div style="float:left;">
+<div style="float:right;">
 <table class="table table-condensed table-striped" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -553,22 +554,34 @@ Broad.age.group
 </div>
 </div>
 </div>
-<div id="other-data-details-to-note" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Other data details to note<a href="data-requirements.html#other-data-details-to-note" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="other-data-details-to-note" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Other data details to note<a href="data-requirements.html#other-data-details-to-note" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
-<li>It does not matter how sex is coded – you’ll be asked to define sex when loading your datasets.</li>
+<li>You will be asked whether your dataset includes an “All cancers” category — a row that summarizes the total number of diagnoses or deaths across all cancer types. We <strong>strongly</strong> recommend including this in your dataset. If you do not supply an “All cancers” category, one will be created automatically by summing across the cancer types you provide.</li>
+</ol>
+<ul>
+<li><p>If your dataset is not comprehensive (i.e., it only includes a subset of cancer types), then the generated “All cancers” total may be misleading, since it won’t reflect the true overall cancer burden.</p></li>
+<li><p>If your dataset includes nested cancer categories (e.g., Gynecological cancers and Ovarian cancer), CaRDo requires an explicit “All cancers” row. Without it, the dashboard will double count nested cancers during aggregation.</p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>It does <strong>not</strong> matter how sex is coded – you’ll be asked to define sex when loading your datasets.</li>
 <li>CaRDO will calculate counts for persons based on counts for males and females – you do not need to supply data for persons (males + females).<br />
 </li>
 <li>By default, counts below 5 will be suppressed. These data points will appear as ‘insufficient data’ in the dashboard. You will have the option to set a custom suppression threshold.<br />
 </li>
 <li>Where low counts can be reverse engineered by comparing counts across conditions, all related counts will be suppressed. For example, if thyroid cancer counts for men for a given year are below 5, but counts for women are available, both men’s and total (persons) will be suppressed, as the men’s count could be deduced by subtracting women from the total.</li>
-<li>You will be asked to specify if you have an ‘all cancers’ category in your dataset. We strongly recommend including an ‘all cancers’ category in your dataset. If you do not have an ‘all cancers’ category, one will be created for you based on aggregating over the cancer categories you supply. If your data is not exhaustive with respect to cancer categories, the ‘all cancers’ category may (will) be misleading. Furthermore, if you have <strong>nested</strong> cancer type categories in your dataset, for example ‘Gynecological’ and ‘Ovarian’ cancer, you <strong>must</strong> have an ‘all cancers’ category. Otherwise, cancer data will be double counted when aggregating across nested categories.</li>
 </ol>
 <p><br>
-If you have additional data to include in your dashboard, stick with us for just a moment longer—we’ll walk you through how to <a href="expand-your-dashboard.html#expand-your-dashboard">Expand Your Dashboard</a> in the next section. Otherwise, if your dataset looks like the example above and you have no further data to add, then you’re ready to <a href="build-your-dashboard.html#build-your-dashboard">Build Your Dashboard</a>.</p>
+If you have additional data to include in your dashboard, such as mortality data, stick with us for just a moment longer — we’ll walk you through how to <a href="expand-your-dashboard.html#expand-your-dashboard">Expand Your Dashboard</a> in the next section. Otherwise, if your dataset looks like the example above and you have no further data to add, then you’re ready to launch CaRDO and begin building your own dashboard using the following command.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-requirements.html#cb6-1" tabindex="-1"></a>CaRDO<span class="sc">::</span><span class="fu">create_dashboard</span>()</span></code></pre></div>
+<ul>
+<li><em>For guidance navigating the CaRDO user interface, return to <a href="cardo-example.html#launch-cardo">launch CaRDO</a> and follow the steps.</em></li>
+</ul>
 <p><br>
-<span style="font-size:25px;"><a href="expand-your-dashboard.html#expand-your-dashboard">Expand Your Dashboard</a></span></p>
-<p><span style="font-size:25px;"><a href="build-your-dashboard.html#build-your-dashboard">Build Your Dashboard</a></span></p>
+if you’re finished building your CaRDO dashboard, learn how to publish it online <a href="publishing.html#publishing">here</a>.</p>
+<p><br>
+<span style="font-size:22px;"><a href="expand-your-dashboard.html#expand-your-dashboard">Expand Your Dashboard</a></span></p>
+<p><span style="font-size:22px;"><a href="publishing.html#publishing">Publishing</a></span></p>
 
 </div>
 </div>
@@ -577,7 +590,7 @@ If you have additional data to include in your dashboard, stick with us for just
           </div>
         </div>
       </div>
-<a href="get-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cardo-example.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="expand-your-dashboard.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

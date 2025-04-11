@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Publishing | The CaRDO Handbook</title>
+  <title>Chapter 7 Publishing | The CaRDO Handbook</title>
   <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
 The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Publishing | The CaRDO Handbook" />
+  <meta property="og:title" content="Chapter 7 Publishing | The CaRDO Handbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
@@ -19,7 +19,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="github-repo" content="https://github.com/CCQResearch/CaRDO" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Publishing | The CaRDO Handbook" />
+  <meta name="twitter:title" content="Chapter 7 Publishing | The CaRDO Handbook" />
   
   <meta name="twitter:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
@@ -35,7 +35,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="build-your-dashboard.html"/>
+<link rel="prev" href="expand-your-dashboard.html"/>
 <link rel="next" href="quick-setup.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -172,17 +172,16 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
 <li class="chapter" data-level="2" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>2</b> Get Started</a></li>
-<li class="chapter" data-level="3" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>3</b> Data Requirements</a></li>
-<li class="chapter" data-level="4" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>4</b> Expand Your Dashboard</a></li>
-<li class="chapter" data-level="5" data-path="build-your-dashboard.html"><a href="build-your-dashboard.html"><i class="fa fa-check"></i><b>5</b> Build Your Dashboard</a></li>
-<li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
-<li class="chapter" data-level="7" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>7</b> Quick setup</a></li>
-<li class="chapter" data-level="8" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>8</b> Updating Your Dashboard</a></li>
-<li class="chapter" data-level="9" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>9</b> Example Datasets</a></li>
+<li class="chapter" data-level="3" data-path="install-cardo.html"><a href="install-cardo.html"><i class="fa fa-check"></i><b>3</b> Install CaRDO</a></li>
+<li class="chapter" data-level="4" data-path="cardo-example.html"><a href="cardo-example.html"><i class="fa fa-check"></i><b>4</b> CaRDO Example</a></li>
+<li class="chapter" data-level="5" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>5</b> Data Requirements</a></li>
+<li class="chapter" data-level="6" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>6</b> Expand Your Dashboard</a></li>
+<li class="chapter" data-level="7" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>7</b> Publishing</a></li>
+<li class="chapter" data-level="8" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>8</b> Quick setup</a></li>
+<li class="chapter" data-level="9" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>9</b> Updating Your Dashboard</a></li>
 <li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
 <li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
 <li class="chapter" data-level="12" data-path="citation-contact.html"><a href="citation-contact.html"><i class="fa fa-check"></i><b>12</b> Citation &amp; Contact</a></li>
-<li class="chapter" data-level="13" data-path="survival.html"><a href="survival.html"><i class="fa fa-check"></i><b>13</b> Survival</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -203,21 +202,21 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="publishing" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Publishing<a href="publishing.html#publishing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="publishing" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Publishing<a href="publishing.html#publishing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Once you have created a dashboard, you will need to decide how to publish it to allow users to access your dashboard and explore cancer patterns and trends.</p>
 <p>There are several options available, however, we recommend using <a href="https://www.shinyapps.io/">shinyapps.io</a>. ShinyApps.io is a cloud-based hosting platform by <a href="https://posit.co/">Posit</a> that allows users to easily deploy (within R) and share <a href="https://shiny.posit.co/">Shiny</a> applications online without requiring server management. It offers multiple pricing tiers, including a free option, making it an accessible choice for individuals and small organizations.</p>
 <p>ShinyApps.io does have security limitations that you should be aware of - ShinyApps.io applications are run in a shared environment. This means that data flows <strong>outside</strong> of your infrastructure to reach the platform. For this reason, we <strong>do not recommend Shinyapps.io for highly sensitive data</strong>. This is why we stress confirming that your data is fit for public consumption <strong>before</strong> publishing your dashboard, and why <strong>CaRDO is specifically designed to handle sensitive data locally</strong>, before it is published. Cancer Council Queensland uses ShinyApps.io to publish our <a href="https://cancerqld.org.au/research/queensland-cancer-statistics/queensland-cancer-statistics-online-qcsol/">cancer statistics dashboard</a>.</p>
 <p>A detailed summary of alternative publishing options and their strengths and limitations is available <a href="https://www.appsilon.com/post/r-shiny-deployment">here</a></p>
-<div id="publishing-with-shinyapps.io" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Publishing with Shinyapps.io<a href="publishing.html#publishing-with-shinyapps.io" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="publishing-with-shinyapps.io" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Publishing with Shinyapps.io<a href="publishing.html#publishing-with-shinyapps.io" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A detailed guide to setting up a Shinyapps.io account and deploying your dashboard is published <a href="https://shiny.posit.co/r/articles/share/shinyapps/">here</a>. Deployment instructions are also provided upon account setup. Below we provide a summary of the key steps to follow.</p>
 <p><br>
 <strong>Step 1 - rsconnect</strong></p>
 <p>Shinyapps.io requires the latest version of rsconnect. Install the <code>rsconnect</code> package by running the following command in your Rstudio console.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="publishing.html#cb6-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rsconnect&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="publishing.html#cb8-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rsconnect&#39;</span>)</span></code></pre></div>
 <p>Once installed, load <code>rsconnect</code> into your R session.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="publishing.html#cb7-1" tabindex="-1"></a><span class="fu">library</span>(rsconnect)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="publishing.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(rsconnect)</span></code></pre></div>
 <p><br>
 <strong>Step 2 - setup account</strong></p>
 <p>To publish your dashboard through <a href="https://www.shinyapps.io/">shinyapps.io</a> you will need to sign up for an account. By default, all Shinyapps.io accounts are free with the option to upgrade to a paid service (more on this later).</p>
@@ -231,7 +230,7 @@ div.csl-indent {
 <strong>Step 4 - deploy/publish</strong></p>
 <p>You’re now ready to publish your CaRDO dashboard - there are two methods.</p>
 <p>You may run the following code, or alternatively, you may click the publish icon ( <img src="images/publishIcon.png" width="30" height="30" style="vertical-align:middle;"> ) in the top right corner, next to run.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="publishing.html#cb8-1" tabindex="-1"></a>rsconnect<span class="sc">::</span><span class="fu">deployApp</span>(<span class="st">&#39;path/to/your/app&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="publishing.html#cb10-1" tabindex="-1"></a>rsconnect<span class="sc">::</span><span class="fu">deployApp</span>(<span class="st">&#39;path/to/your/app&#39;</span>)</span></code></pre></div>
 <p>Select the files to be published: Broadly, these will include your app.R file, any other data files, and any image and css (www folder) files. The specific files required for CaRDO are the following:</p>
 <ul>
 <li>app.R</li>
@@ -245,14 +244,19 @@ div.csl-indent {
 <p>Give your dashboard a name (this will appear in the URL!) and hit Publish - this will take a moment.</p>
 <p>And you’re done. Your cancer dashboard is ready to share!</p>
 <p><br></p>
-<div id="pricing" class="section level3 hasAnchor" number="6.1.1">
-<h3><span class="header-section-number">6.1.1</span> Pricing<a href="publishing.html#pricing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="pricing" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Pricing<a href="publishing.html#pricing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Shinyapps.io has a range of paid plans to suit different needs when deploying Shiny applications. By default, users can start with the free tier, which allows limited deployment with restrictions on active hours and resources. You can find more details on pricing tiers and available services <a href="https://www.shinyapps.io/">here</a></p>
 <p><br>
-Thank you for using CaRDO.</p>
-<p>Again, please reach out to us at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a> if you have any questions, concerns or feedback - we’d love to hear from you.</p>
+### That’s a wrap!</p>
+<p>Your CaRDO dashboard is ready to share -communicate timely, population-level cancer statistics with clarity and purpose. Sharing this data helps raise awareness of cancer trends, highlight disparities, and inform evidence-based action across research, policy, and care.</p>
+<p>The remainder of this handbook provides details on [updating] your CaRDO dashboard when new cancer data becomes available, CaRDO <a href="methods.html#methods">methods</a>, <a href="references.html#references">References</a>, and <a href="citation-contact.html#citation-contact">Citation &amp; Contact</a> information. Once again, please reach out to us at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a> if you have any questions, concerns or feedback - we’d love to hear from you.</p>
+<p>Thank you for using CaRDO.</p>
 <p><br>
 <span style="font-size:25px;"><a href="updating-your-dashboard.html#updating-your-dashboard">Updating Your Dashboard</a></span></p>
+<p><span style="font-size:25px;"><a href="methods.html#methods">Methods</a></span></p>
+<p><span style="font-size:25px;"><a href="references.html#references">References</a></span></p>
+<p><span style="font-size:25px;"><a href="citation-contact.html#citation-contact">Citation &amp; Contact</a></span></p>
 
 </div>
 </div>
@@ -262,7 +266,7 @@ Thank you for using CaRDO.</p>
           </div>
         </div>
       </div>
-<a href="build-your-dashboard.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="expand-your-dashboard.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="quick-setup.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

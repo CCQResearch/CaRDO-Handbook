@@ -35,7 +35,7 @@ The book is intended for those with minimal R and RStudio experience.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="example-datasets.html"/>
+<link rel="prev" href="updating-your-dashboard.html"/>
 <link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -172,17 +172,16 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
 <li class="chapter" data-level="2" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>2</b> Get Started</a></li>
-<li class="chapter" data-level="3" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>3</b> Data Requirements</a></li>
-<li class="chapter" data-level="4" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>4</b> Expand Your Dashboard</a></li>
-<li class="chapter" data-level="5" data-path="build-your-dashboard.html"><a href="build-your-dashboard.html"><i class="fa fa-check"></i><b>5</b> Build Your Dashboard</a></li>
-<li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a></li>
-<li class="chapter" data-level="7" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>7</b> Quick setup</a></li>
-<li class="chapter" data-level="8" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>8</b> Updating Your Dashboard</a></li>
-<li class="chapter" data-level="9" data-path="example-datasets.html"><a href="example-datasets.html"><i class="fa fa-check"></i><b>9</b> Example Datasets</a></li>
+<li class="chapter" data-level="3" data-path="install-cardo.html"><a href="install-cardo.html"><i class="fa fa-check"></i><b>3</b> Install CaRDO</a></li>
+<li class="chapter" data-level="4" data-path="cardo-example.html"><a href="cardo-example.html"><i class="fa fa-check"></i><b>4</b> CaRDO Example</a></li>
+<li class="chapter" data-level="5" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>5</b> Data Requirements</a></li>
+<li class="chapter" data-level="6" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>6</b> Expand Your Dashboard</a></li>
+<li class="chapter" data-level="7" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>7</b> Publishing</a></li>
+<li class="chapter" data-level="8" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>8</b> Quick setup</a></li>
+<li class="chapter" data-level="9" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>9</b> Updating Your Dashboard</a></li>
 <li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
 <li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
 <li class="chapter" data-level="12" data-path="citation-contact.html"><a href="citation-contact.html"><i class="fa fa-check"></i><b>12</b> Citation &amp; Contact</a></li>
-<li class="chapter" data-level="13" data-path="survival.html"><a href="survival.html"><i class="fa fa-check"></i><b>13</b> Survival</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -242,7 +241,16 @@ The process of loading data into CaRDO is no different to loading data into RStu
 <li><code>shinywidgets</code> (<span class="citation">Perrier, Meyer, and Granjon (<a href="references.html#ref-widgets">2025</a>)</span>)</li>
 <li><code>plotly</code> (<span class="citation">Sievert (<a href="references.html#ref-plotly">2020</a>)</span>)</li>
 <li><code>markdown</code> (<span class="citation">Xie, Allaire, and Horner (<a href="references.html#ref-markdown">2024</a>)</span>)</li>
+<li><code>strucchange</code> (<span class="citation">Zeileis et al. (<a href="references.html#ref-strucchange">2002</a>)</span>)</li>
+<li><code>segmented</code> (<span class="citation">Muggeo (<a href="references.html#ref-segmented">2008</a>)</span>)</li>
 </ul>
+</div>
+<div id="example-datasets-1" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Example Datasets<a href="methods.html#example-datasets-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Below are the three example datasets used in the <a href="cardo-example.html#cardo-example">CaRDO example</a>. These are fictional datasets intended to illustrate how cancer incidence, mortality, and population data should be structured for CaRDO.</p>
+<p><a href="data/CaRDO_Inc_Example.csv">Cancer Incidence Dataset</a>: An example dataset containing cancer <em>diagnoses</em> by cancer type, year, sex, and 5-year age group.</p>
+<p><a href="data/CaRDO_Mrt_Example.csv">Cancer Mortality Dataset</a>: An example dataset containing cancer <em>deaths</em> by cancer type, year, sex, and 5-year age group.</p>
+<p><a href="data/CaRDO_Pop_Example.csv">Population Dataset</a>: An example dataset containing population estimates by year, sex, and 5-year age group, which can be used for calculating cancer age-standardised rates.</p>
 
 <!-- # References -->
 <!-- References  -->
@@ -254,7 +262,7 @@ The process of loading data into CaRDO is no different to loading data into RStu
           </div>
         </div>
       </div>
-<a href="example-datasets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="updating-your-dashboard.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
