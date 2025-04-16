@@ -18,6 +18,7 @@ other-data-details-to-note-1
 publishing
 publishing-with-shinyapps.io
 pricing
+and-thats-a-wrap
 quick-setup
 updating-your-dashboard
 methods
