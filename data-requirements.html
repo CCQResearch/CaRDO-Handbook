@@ -343,7 +343,7 @@ You must have a single column for each variable and outcome you wish to report, 
 <ol start="2" style="list-style-type: decimal">
 <li>Cancer-type values <strong>must</strong> be coded as you wish them to be displayed (see example above).</li>
 </ol>
-<p>For example, liver cancer should be coded as ‘Liver’ or ‘Liver cancer’ and not as a numerical value. Numerical coding will cause cancer types to display as numbers in the dashboard and be uninterpretable for users who don’t know the coding scheme.</p>
+<p>For example, liver cancer should be coded as ‘Liver’ or ‘Liver cancer’ and not as a numerical value. Numerical coding will cause cancer types to display as numbers in the dashboard and be uninterpretable for users who don’t know the coding scheme (and even for those who do).</p>
 </div>
 <div id="year-age-groups" class="section level3 hasAnchor" number="5.1.3">
 <h3><span class="header-section-number">5.1.3</span> 5-year age groups<a href="data-requirements.html#year-age-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -561,7 +561,7 @@ Broad.age.group
 </ol>
 <ul>
 <li><p>If your dataset is not comprehensive (i.e., it only includes a subset of cancer types), then the generated ‘All cancers’ total may be misleading, since it won’t reflect the true overall cancer burden.</p></li>
-<li><p>If your dataset includes nested cancer categories (e.g., Gynecological cancers and Ovarian cancer), CaRDo requires an explicit ‘All cancers’ row. Without it, the dashboard will double count nested cancers during aggregation.</p></li>
+<li><p>If your dataset includes nested cancer categories (e.g., Gynecological cancers and Ovarian cancer), CaRDO requires an explicit ‘All cancers’ row. Without it, the dashboard will double count nested cancers during aggregation.</p></li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
 <li>It does <strong>not</strong> matter how sex is coded – you’ll be asked to define sex when loading your datasets.</li>
