@@ -8,7 +8,7 @@
   <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
 The book is intended for those with minimal R and RStudio experience.</p>" />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 CaRDO Example | The CaRDO Handbook" />
   <meta property="og:type" content="book" />
@@ -73,7 +73,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -253,11 +253,11 @@ div.csl-indent {
 <strong>Step 7</strong>. Finalise your dashboard.</p>
 <p>Give your dashboard a title and specify the specific area that your cancer data covers. For example, is your data from a specific <strong>country</strong>, <strong>state or province</strong>, <strong>city</strong> or <strong>health region</strong>?</p>
 <p>On this page, you are also asked to specify whether the loaded cancer incidence and mortality datasets contain an ‘<em>All cancers</em>’ category. This refers to a row/rows that sum up the total number of cancer diagnoses or deaths for all cancers combined - often ladeled as ‘All cancers’. This is different from only having individual cancer types like lung or breast cancer in the dataset. It’s important to know because it affects how CaRDO will calculate totals and display summary statistics. We <strong>strongly</strong> recommend including an ‘All cancers’ category in your cancer datasets for reasons discussed further in the <a href="data-requirements.html#data-requirements">Data Requirements</a> section. The example cancer datasets contain an ‘All cancers’ category so we will leave ‘Yes’ selected.</p>
-<p>Finally, the suppression threshold allows users to suppress any values in the dataset below the specified value (if this hasn’t already been done during data preparation). This feature is designed as a safety mechanism — a final layer of protection in case suppression wasn’t handled beforehand loading your data. Leave this at 5 for now and click <strong>Create Dashboard</strong>.</p>
+<p>Finally, the suppression threshold allows users to suppress any values in the dataset below the specified value (if this hasn’t already been done during data preparation). This feature is designed as a safety mechanism — a final layer of protection in case suppression wasn’t handled beforehand loading your data. For registries with minimal data, you’re also given the option to aggregate your data into fixed <em>5-year intervals</em> (e.g., 2018–2022) to support meaningful reporting while maintaining confidentiality. Leave suppression at 5, skip aggregation for now, and click <strong>Create Dashboard</strong>.</p>
 <p><img src="images/finalise.png" width="100%" style="padding:10px; border:2px solid;" /></p>
 <p><br>
 <strong>Step 8</strong>. Open your dashboard</p>
-<p>CaRDO will provide you with code to open your dashboard application (.app) file. Follows these <em>exact</em> steps.</p>
+<p>CaRDO will provide you with code to open your dashboard application (.app) file. Follows these <em>exact</em> steps in this order.</p>
 <ol style="list-style-type: decimal">
 <li><p>Click <strong>Copy to clipboard</strong></p></li>
 <li><p>Click <strong>Exit</strong> CaRDO.</p></li>
@@ -300,42 +300,42 @@ Finished building your CaRDO dashboard with your own data? Learn how to publish 
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

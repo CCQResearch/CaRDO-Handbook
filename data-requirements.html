@@ -8,7 +8,7 @@
   <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
 It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
 The book is intended for those with minimal R and RStudio experience.</p>" />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Data Requirements | The CaRDO Handbook" />
   <meta property="og:type" content="book" />
@@ -73,7 +73,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -337,6 +337,7 @@ All cancers
 </table>
 <p><br>
 You must have a single column for each variable and outcome you wish to report, and each row in your dataset should correspond to a unique combination of each variable. Refer back to the <a href="cardo-example.html#example-datasets">Example Datasets</a> for further guidance.</p>
+<p>Note: For registries with minimal data, CaRDO provides the option to aggregate and report your data by fixed 5-year intervals (e.g., 2018–2022) once your data has been loaded.</p>
 </div>
 <div id="cancer-types" class="section level3 hasAnchor" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> Cancer types<a href="data-requirements.html#cancer-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -567,9 +568,7 @@ Broad.age.group
 <li>It does <strong>not</strong> matter how sex is coded – you’ll be asked to define sex when loading your datasets.</li>
 <li>CaRDO will calculate counts for persons based on counts for males and females – you do not need to supply data for persons (males + females).<br />
 </li>
-<li>By default, counts below 5 will be suppressed. These data points will appear as ‘insufficient data’ in the dashboard. You will have the option to set a custom suppression threshold.<br />
-</li>
-<li>Where low counts can be reverse engineered by comparing counts across conditions, all related counts will be suppressed. For example, if thyroid cancer counts for men for a given year are below 5, but counts for women are available, both men’s and total (persons) will be suppressed, as the men’s count could be deduced by subtracting women from the total.</li>
+<li>By default, counts below 5 will be suppressed. These data points will appear as ‘insufficient data’ in the dashboard. You will have the option to set a custom suppression threshold.</li>
 </ol>
 <p><br>
 If you have additional data to include in your dashboard, such as mortality data, stick with us for just a moment longer — we’ll walk you through how to <a href="expand-your-dashboard.html#expand-your-dashboard">Expand Your Dashboard</a> in the next section. Otherwise, if your dataset looks like the example above and you have no further data to add, then you’re ready to launch CaRDO and begin building your own dashboard using the following command.</p>
@@ -605,42 +604,42 @@ If you’ve finished building your CaRDO dashboard, learn how to publish it onli
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
