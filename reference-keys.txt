@@ -1,4 +1,5 @@
 about
+licence
 get-started
 r-rstudio
 install-cardo
