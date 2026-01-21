@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Methods | The CaRDO Handbook</title>
+  <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
+It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
+The book is intended for those with minimal R and RStudio experience.</p>" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Methods | The CaRDO Handbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
+It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
+The book is intended for those with minimal R and RStudio experience.</p>" />
+  <meta name="github-repo" content="https://github.com/CCQResearch/CaRDO" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Methods | The CaRDO Handbook" />
+  
+  <meta name="twitter:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
+It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
+The book is intended for those with minimal R and RStudio experience.</p>" />
+  
+
+<meta name="author" content="James Retell, Sean Francis, James Rene &amp; Peter Baade" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="updating-your-dashboard.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-40W7WHEXBP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'G-40W7WHEXBP');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The CaRDO Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
+<li class="chapter" data-level="2" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>2</b> Get Started</a></li>
+<li class="chapter" data-level="3" data-path="install-cardo.html"><a href="install-cardo.html"><i class="fa fa-check"></i><b>3</b> Install CaRDO</a></li>
+<li class="chapter" data-level="4" data-path="cardo-example.html"><a href="cardo-example.html"><i class="fa fa-check"></i><b>4</b> CaRDO Example</a></li>
+<li class="chapter" data-level="5" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>5</b> Data Requirements</a></li>
+<li class="chapter" data-level="6" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>6</b> Expand Your Dashboard</a></li>
+<li class="chapter" data-level="7" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>7</b> Publishing</a></li>
+<li class="chapter" data-level="8" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>8</b> Quick setup</a></li>
+<li class="chapter" data-level="9" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>9</b> Updating Your Dashboard</a></li>
+<li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="12" data-path="citation-contact.html"><a href="citation-contact.html"><i class="fa fa-check"></i><b>12</b> Citation &amp; Contact</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The CaRDO Handbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="methods" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Methods<a href="methods.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="age-standardized-rates" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Age-standardized rates<a href="methods.html#age-standardized-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Age-standardised rates attempt to adjust for variation in age structures in different populations (either different geographical areas or the same population across time). There are two methods of age-standardisation – direct and indirect.</p>
+<p>All cancer diagnoses and cancer deaths trends were calculated using directly standardised rates. The method involves applying age-specific rates from the population of interest (i.e. your catchment) to a standard population, which in CaRDO is the <a href="https://seer.cancer.gov/stdpopulations/world.who.html" target="_blank">World Standard Population</a> by default. Five-year age groups up to 85-years-and-above were used for all age-standardized rate calculations.</p>
+<p>Note: if not all 18 age groups are supplied, the standard population is re-weighted according to your supplied age groups.</p>
+</div>
+<div id="lifetime-risk" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Lifetime risk<a href="methods.html#lifetime-risk" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cumulative risk is a measure used to estimate the risk of developing or dying of cancer up to a specific age. It takes into account the removal of persons from the population of interest who have already been diagnosed with or died from cancer. Commonly expressed as a ‘1 in n’ proportion, the cumulative risk is calculated as:</p>
+<p><span class="math display">\[n = \frac{1}{1-\exp(-5\sum a_j\times\frac{100}{100,000})}\]</span></p>
+<p>where <span class="math inline">\(a_j\)</span> are the age-specific rates (5-year age groups) per 100,000 for ages 0 – to your specific age group, for example 85. CaRDO provides the cumulative risk up to the age 85 as an approximation of lifetime risk. An x in 100 variation is also supplied, calculated as the inverse of the cumulative risk multiplied by 100. These calculations assume that the person experiences the current age-specific risk rates up to the age specified (e.g. 85), so do not account for any specific risk factors (such as smoking).</p>
+</div>
+<div id="incidence-mortality-trends" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Incidence &amp; mortality trends<a href="methods.html#incidence-mortality-trends" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Incidence and mortality trends were calculated by fitting piece-wise functions, composed of splines and linear models, to the data.</p>
+<p>Break points were identified using the <code>strucchange</code> package <span class="citation">(<a href="references.html#ref-strucchange">Zeileis et al. 2002</a>)</span>, specifically the function <code>breakpoints()</code> <span class="citation">(<a href="references.html#ref-breakpoints_func">Zeileis et al. 2003</a>)</span>. The data was then segmented by these breakpoints. A maximum number of 3 breakpoints were set, with a minimum number of 5 observations within each segment. Then, a spline and linear model was fit to each segment using the <code>mgcv</code> package <span class="citation">(<a href="references.html#ref-mgcv">Wood 2003</a>)</span>. The model with the lowest AIC was chosen for each given segment.</p>
+</div>
+<div id="sex-specific-cancers" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Sex specific cancers<a href="methods.html#sex-specific-cancers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>CaRDO does not inherently know which cancer types are sex-specific based on the data you load. Since accurate rate calculations require matching the denominator (population count) to the appropriate sex, CaRDO determines sex specificity by scanning the dataset for sex codes by cancer type across all years. If a cancer type has data for only one sex, it is classified as sex-specific. For example, because prostate cancer occurs only in males and is absent from female data, CaRDO knows to calculate rates using the male population as the denominator rather than the total population. It is important to note that this method <strong>does not</strong> distinguish between truly sex-specific cancers and cases where data for one sex is simply absent due to low numbers. Where data is absent due to low counts, CaRDO will <strong>misclassify</strong> the cancer type as sex-specific and calculate the rate using the <em>incorrect</em> denominator (population count). If this unlikely scenario arises, in the short term, we recommend removing cancer types from your dataset that are not sex-specific but where data is only available for one sex. For an alternative solution, please reach out to us at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a></p>
+</div>
+<div id="data-privacy" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Data Privacy<a href="methods.html#data-privacy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Data loaded into CaRDO are stored locally on your computer, and all analyses are performed locally. Your data will not leave your computer while using CaRDO – CaRDO has been designed with data privacy as a top priority.
+The process of loading data into CaRDO is no different to loading data into RStudio on your local computer. In fact, that is all that is happening - CaRDO loads data into the RStudio environment and carries out data processing locally on your machine using R. It is perfectly safe to load sensitive data into CaRDO as you would into any other secure data managment software. Once CaRDO has finished data processing, it will create a series of summary data files (stored locally) used for the creation of the dashboard. We encourage you to inspect these data files if you have any concerns. Suppression of sensitive data (low counts) is discussed in the <a href="data-requirements.html#data-requirements">Data Requirements</a> section.</p>
+<p><span style="color:red;">Important:</span> If you choose to publish your dashboard (e.g., share it online), data will be uploaded to the <strong>internet</strong> (made public) at the resolution that it appears in the CaRDO dashboard. It is your responsibility to ensure that all displayed data is appropriate for sharing before publishing publicly.</p>
+</div>
+<div id="packages" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Packages<a href="methods.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>CaRDO was built using the following R packages:</p>
+<ul>
+<li><code>shiny</code> software package for R (<span class="citation">Chang et al. (<a href="references.html#ref-shiny">2025</a>)</span>)</li>
+<li><code>tidyverse</code> (<span class="citation">Wickham et al. (<a href="references.html#ref-tidy">2019</a>)</span>)</li>
+<li><code>bslib</code> (<span class="citation">Sievert, Cheng, and Aden-Buie (<a href="references.html#ref-bslib">2025</a>)</span>)</li>
+<li><code>shinywidgets</code> (<span class="citation">Perrier, Meyer, and Granjon (<a href="references.html#ref-widgets">2025</a>)</span>)</li>
+<li><code>plotly</code> (<span class="citation">Sievert (<a href="references.html#ref-plotly">2020</a>)</span>)</li>
+<li><code>markdown</code> (<span class="citation">Xie, Allaire, and Horner (<a href="references.html#ref-markdown">2024</a>)</span>)</li>
+<li><code>strucchange</code> (<span class="citation">Zeileis et al. (<a href="references.html#ref-strucchange">2002</a>)</span>)</li>
+<li><code>segmented</code> (<span class="citation">Muggeo (<a href="references.html#ref-segmented">2008</a>)</span>)</li>
+</ul>
+</div>
+<div id="example-datasets-1" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Example Datasets<a href="methods.html#example-datasets-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Below are the three example datasets used in the <a href="cardo-example.html#cardo-example">CaRDO example</a>. These are fictional datasets intended to illustrate how cancer incidence, mortality, and population data should be structured for CaRDO.</p>
+<p><a href="data/CaRDO_Inc_Example.csv">Cancer Incidence Dataset</a>: An example dataset containing cancer <em>diagnoses</em> by cancer type, year, sex, and 5-year age group.</p>
+<p><a href="data/CaRDO_Mrt_Example.csv">Cancer Mortality Dataset</a>: An example dataset containing cancer <em>deaths</em> by cancer type, year, sex, and 5-year age group.</p>
+<p><a href="data/CaRDO_Pop_Example.csv">Population Dataset</a>: An example dataset containing population estimates by year, sex, and 5-year age group, which can be used for calculating cancer age-standardised rates.</p>
+
+<!-- # References -->
+<!-- References  -->
+<!-- 1. World (WHO 2000-2025) Standard - Standard Populations - SEER Datasets  -->
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="updating-your-dashboard.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

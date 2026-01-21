@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Expand Your Dashboard | The CaRDO Handbook</title>
+  <meta name="description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
+It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
+The book is intended for those with minimal R and RStudio experience.</p>" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Expand Your Dashboard | The CaRDO Handbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
+It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
+The book is intended for those with minimal R and RStudio experience.</p>" />
+  <meta name="github-repo" content="https://github.com/CCQResearch/CaRDO" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Expand Your Dashboard | The CaRDO Handbook" />
+  
+  <meta name="twitter:description" content="<p>The CaRDO Handbook provides a comprehensive guide to using the CaRDO (Cancer Registry Online) package.
+It covers the steps required to create a dashboard to display and publish population-level cancer statistics, trends, and patterns, as well as the statistical methods used.
+The book is intended for those with minimal R and RStudio experience.</p>" />
+  
+
+<meta name="author" content="James Retell, Sean Francis, James Rene &amp; Peter Baade" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-requirements.html"/>
+<link rel="next" href="publishing.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-40W7WHEXBP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'G-40W7WHEXBP');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The CaRDO Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
+<li class="chapter" data-level="2" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>2</b> Get Started</a></li>
+<li class="chapter" data-level="3" data-path="install-cardo.html"><a href="install-cardo.html"><i class="fa fa-check"></i><b>3</b> Install CaRDO</a></li>
+<li class="chapter" data-level="4" data-path="cardo-example.html"><a href="cardo-example.html"><i class="fa fa-check"></i><b>4</b> CaRDO Example</a></li>
+<li class="chapter" data-level="5" data-path="data-requirements.html"><a href="data-requirements.html"><i class="fa fa-check"></i><b>5</b> Data Requirements</a></li>
+<li class="chapter" data-level="6" data-path="expand-your-dashboard.html"><a href="expand-your-dashboard.html"><i class="fa fa-check"></i><b>6</b> Expand Your Dashboard</a></li>
+<li class="chapter" data-level="7" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>7</b> Publishing</a></li>
+<li class="chapter" data-level="8" data-path="quick-setup.html"><a href="quick-setup.html"><i class="fa fa-check"></i><b>8</b> Quick setup</a></li>
+<li class="chapter" data-level="9" data-path="updating-your-dashboard.html"><a href="updating-your-dashboard.html"><i class="fa fa-check"></i><b>9</b> Updating Your Dashboard</a></li>
+<li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="12" data-path="citation-contact.html"><a href="citation-contact.html"><i class="fa fa-check"></i><b>12</b> Citation &amp; Contact</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The CaRDO Handbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="expand-your-dashboard" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Expand Your Dashboard<a href="expand-your-dashboard.html#expand-your-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<hr>
+<div id="cancer-mortality-data" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Cancer mortality data<a href="expand-your-dashboard.html#cancer-mortality-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you have cancer mortality data, CaRDO will add a mortality statistics page to your dashboard. The data requirements and processes for loading cancer mortality data are identical to those we’ve described for cancer incidence data.</p>
+<ol style="list-style-type: decimal">
+<li><p>You must have a single column for each variable and outcome you wish to report, and each row in your dataset should correspond to a unique combination of each variable.</p></li>
+<li><p>Cancer-type values must be coded as you wish them to be displayed.</p></li>
+<li><p>Cancer deaths must be aggregated by 5-year age groups, with age groups coded numerically from 1 – 18.
+The interface will ask you to load in a cancer incidence and mortality file separately. However, whether you store mortality data in a separate data file, or as an additional column in your incidence data file (and load the file twice) does not matter.</p></li>
+</ol>
+</div>
+<div id="age-standardised-rates---population-data" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Age-standardised rates - population data<a href="expand-your-dashboard.html#age-standardised-rates---population-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="display: flex; justify-content: space-between;">
+<div style="float: left; width: 50%;">
+<p>If you wish to report age-standardised cancer rates, you must provide a population file that corresponds to the area your cancer data covers—for example, a specific country, state or province, city, or health region. Population data should be organised by 5-year age groups, year, and sex, and otherwise be structured the same as your incidence data. See the example to the right (variable names do not matter).</p>
+</div>
+<div style="float: right; width: 45%;">
+<table class="table table-condensed table-striped" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:right;">
+Sex
+</th>
+<th style="text-align:right;">
+Age.group
+</th>
+<th style="text-align:right;">
+Population
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+6332
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7541
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+8544
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+12632
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+9198
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="other-data-details-to-note-1" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Other data details to note<a href="expand-your-dashboard.html#other-data-details-to-note-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>CaRDO will calculate age-standardised rates using a standard population that you will specify from a list of options. The default standard population is the World Standard Population.</p></li>
+<li><p>As with incidence and mortality, it is not necessary that your population file contains population data for persons.</p></li>
+<li><p>Rates will be suppressed where low count data has been suppressed.</p></li>
+</ol>
+<p><br>
+You’re now ready to launch CaRDO and begin building your own dashboard using the following command.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="expand-your-dashboard.html#cb7-1" tabindex="-1"></a>CaRDO<span class="sc">::</span><span class="fu">create_dashboard</span>()</span></code></pre></div>
+<ul>
+<li><em>For guidance navigating the CaRDO user interface, return to <a href="cardo-example.html#launch-cardo">launch CaRDO</a> and follow the steps.</em></li>
+</ul>
+<p><br>
+When you’ve finished building your CaRDO dashboard, learn how to publish it online <a href="publishing.html#publishing">here</a>.</p>
+<p><br>
+<span style="font-size:22px;"><a href="publishing.html#publishing">Publishing</a></span></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-requirements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="publishing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
