@@ -273,9 +273,9 @@ div.csl-indent {
 <li><p>Paste the code into your R console and press Enter/Return.</p></li>
 </ol>
 <ul>
-<li><em>Be sure to exit the CaRDO interface <strong>before</strong> running the code, as RStudio won’t execute the code while the CaRDO interface is still open!</em></li>
+<li><em>Be sure to exit the CaRDO interface <strong>before</strong> pasting and running the code, as RStudio won’t execute the code while the CaRDO interface is still open! The code copied from CaRDO is shown below.</em></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="cardo-example.html#cb5-1" tabindex="-1"></a><span class="fu">file.edit</span>(<span class="st">&#39;your/working/directory/app.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="cardo-example.html#cb5-1" tabindex="-1"></a>shiny<span class="sc">::</span><span class="fu">runApp</span>(<span class="st">&#39;your/working/directory/app.R&#39;</span>)</span></code></pre></div>
 <p><img src="images/create.png" width="80%" style="padding:10px; border:2px solid;" /></p>
 <p><br>
 Alternatively, CaRDO will provide you with a local file path (<em>your RStudio working directory</em>) to your dashboard application. Follow the path and open the ‘<strong>app</strong>’ file - this is your CaRDO application. Run the code by clicking ‘Run’ in the top right of the RStudio console.</p>

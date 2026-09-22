@@ -10,7 +10,7 @@ data-requirements
 the-basic-dashboard
 data-structure
 cancer-types
-year-age-groups
+age-groups
 other-data-details-to-note
 expand-your-dashboard
 cancer-mortality-data
