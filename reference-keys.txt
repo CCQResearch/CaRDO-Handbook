@@ -17,9 +17,10 @@ cancer-mortality-data
 age-standardised-rates---population-data
 other-data-details-to-note-1
 publishing
-publishing-with-shinyapps.io
-pricing
+publishing-with-connect-cloud
 and-thats-a-wrap
+pricing
+already-using-shinyapps
 quick-setup
 updating-your-dashboard
 methods

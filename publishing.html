@@ -214,33 +214,32 @@ div.csl-indent {
 <div id="publishing" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Publishing<a href="publishing.html#publishing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Once you have created a dashboard, you will need to decide how to publish it to allow users to access your dashboard and explore cancer patterns and trends.</p>
-<p>There are several options available, however, we recommend using <a href="https://www.shinyapps.io/" target="_blank">shinyapps.io</a>. ShinyApps.io is a cloud-based hosting platform by <a href="https://posit.co/" target="_blank">Posit</a> that allows users to easily deploy (within RStudio) and share <a href="https://shiny.posit.co/" target="_blank">Shiny</a> applications online without requiring server management. It offers multiple pricing tiers, including a free option, making it an accessible choice for individuals and small organizations.</p>
-<p>ShinyApps.io does have security limitations that you should be aware of - ShinyApps.io applications are run in a shared environment. This means that data flows <strong>outside</strong> of your infrastructure to reach the platform. For this reason, we <strong>do not recommend Shinyapps.io for highly sensitive data</strong>. This is why we stress confirming that your data is fit for public consumption <strong>before</strong> publishing your dashboard, and why <strong>CaRDO is specifically designed to handle sensitive data locally</strong>, before it is published. Cancer Council Queensland uses ShinyApps.io to publish their <a href="https://cancerqld.org.au/research/queensland-cancer-statistics/queensland-cancer-statistics-online-qcsol/" target="_blank">cancer statistics dashboard</a>.</p>
-<p>A detailed summary of alternative publishing options and their strengths and limitations is available <a href="https://www.appsilon.com/post/r-shiny-deployment" target="_blank">here</a></p>
-<div id="publishing-with-shinyapps.io" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Publishing with Shinyapps.io<a href="publishing.html#publishing-with-shinyapps.io" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A detailed guide to setting up a Shinyapps.io account and deploying your dashboard is published <a href="https://shiny.posit.co/r/articles/share/shinyapps/" target="_blank">here</a>. Deployment instructions are also provided upon account setup. Below we provide a summary of the key steps to follow.</p>
-<p><br>
-<strong>Step 1 - rsconnect</strong></p>
-<p>Shinyapps.io requires the latest version of rsconnect. Install the <code>rsconnect</code> package by running the following command in your Rstudio console.</p>
+<p>There are several options available, however, we recommend using <a href="https://connect.posit.cloud/">Posit Connect Cloud</a>. Connect Cloud is a cloud-based hosting platform by <a href="https://posit.co/">Posit</a> that allows users to easily publish (within RStudio) and share <a href="https://shiny.posit.co/">Shiny</a> applications online without requiring server management. It offers multiple pricing tiers, including a free option, making it an accessible choice for individuals and small organizations. Connect Cloud is also the new home for Posit’s earlier hosting service, shinyapps.io, which is being retired. If you have published a dashboard on shinyapps.io before, see Section <a href="publishing.html#already-using-shinyapps">7.2</a> at the end of this chapter.</p>
+<p>Connect Cloud does have security limitations that you should be aware of - Connect Cloud is a hosted platform. This means that your dashboard, and the data files it contains, are uploaded to and stored on servers <strong>outside</strong> of your infrastructure. On the free plan, dashboards are also <strong>publicly accessible</strong> to anyone with the link. For these reasons, we <strong>do not recommend Connect Cloud for highly sensitive data</strong>. This is why we stress confirming that your data is fit for public consumption <strong>before</strong> publishing your dashboard, and why <strong>CaRDO is specifically designed to handle sensitive data locally</strong>, before it is published. Cancer Council Queensland uses Posit’s hosting platforms to publish their <a href="https://cancerqld.org.au/research/queensland-cancer-statistics/queensland-cancer-statistics-online-qcsol/">cancer statistics dashboard</a>.</p>
+<p>Detailed summaries of alternative publishing options and their strengths and limitations are available <a href="https://www.appsilon.com/post/r-shiny-deployment">here</a> and <a href="https://shiny.posit.co/r/deploy.html">here</a></p>
+<div id="publishing-with-connect-cloud" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Publishing with Connect Cloud<a href="publishing.html#publishing-with-connect-cloud" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A detailed guide to publishing from within RStudio is available in the <a href="https://docs.posit.co/connect-cloud/user/publish/ide.html">Connect Cloud documentation</a>. Below we provide a summary of the key steps to follow. Everything is done from within RStudio and your web browser, so you don’t need any other tools.</p>
+<p>There are several ways to publish to Connect Cloud, so don’t be thrown if you see other approaches elsewhere. We’ll show you what we think is the simplest method: publishing directly from RStudio.</p>
+<p><strong>Step 1 - setup your account</strong></p>
+<p>To publish your dashboard, you’ll first need a free account on <a href="https://connect.posit.cloud/">Posit Connect Cloud</a> (you can upgrade to a paid plan later if necessary, more on this below). Several sign-up methods are available, but we recommend keeping it simply: email address and password.</p>
+<p><span style="color:red;">Important:</span> Connect Cloud includes your account name in the URL of everything you publish. Your public profile page, which lists all of your public content, lives at <code>https://connect.posit.cloud/[Account Name]</code> (for individual Free, Basic and Enhanced accounts), and anyone with the link can view it without logging in. Each dashboard is published at an address of the form <code>https://[Account Name]-[Application Name].share.connect.posit.cloud</code>. For this reason, we recommend making your account name something relevant to your registry or organisation that you wish to see in your dashboard URL. Cancer Council Queensland uses <code>cancercouncilqueensland</code>.</p>
+<p><img src="images/publish1_account.png" width="100%" style="padding:10px; border:2px solid;" /></p>
+<p>Once your account is set up, Connect Cloud will prompt you to publish your dashboard. Again, there are numerous methods and the choices can feel overwhelming - ignore them for now. Below, we walk you through our preferred approach: publishing through the RStudio console. Jump back into RStudio, but keep your Connect Cloud browser tab open.</p>
+<p><strong>Step 2 - Connect your account</strong></p>
+<p>We need to link RStudio to Connect Cloud. Install the latest <code>rsconnect</code> package by running this code in your RStudio console.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="publishing.html#cb8-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rsconnect&#39;</span>)</span></code></pre></div>
 <p>Once installed, load <code>rsconnect</code> into your R session.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="publishing.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(rsconnect)</span></code></pre></div>
-<p><br>
-<strong>Step 2 - setup account</strong></p>
-<p>To publish your dashboard through <a href="https://www.shinyapps.io/" target="_blank">shinyapps.io</a> you will need to sign up for an account. By default, all Shinyapps.io accounts are free with the option to upgrade to a paid service (more on this later).</p>
-<p>The first time you sign in, Shinyapps.io will prompt you to specify an account name. Shinyapps.io uses the account name as the domain name for all of your applications. <span style="color:red;">Important:</span> Shinyapps.io uses the account name you specify as the domain name for all your applications. Meaning, your account name will appear in the URL for your dashboard - for this reason, we recommend making your account name something relevant to your registry or organisation.</p>
-<p><img src="images/publish1_account.jpeg" width="100%" style="padding:10px; border:2px solid;" /></p>
-<p><br>
-<strong>Step 3 - authorize</strong></p>
-<p>Once you have setup an account, you will need to configure the <code>rsconnect</code> package to authorize your account. Shinyapps.io provides instructions on how to do this once you’ve setup an account. Copy and paste the R code shown in field into your R console and run the code.</p>
-<p><img src="images/token.jpeg" width="100%" style="padding:10px; border:2px solid;" /></p>
-<p><br>
-<strong>Step 4 - deploy/publish</strong></p>
-<p>You’re now ready to publish your CaRDO dashboard - there are two methods.</p>
-<p>You may run the following code, or alternatively, you may click the publish icon ( <img src="images/publishIcon.png" width="30" height="30" style="vertical-align:middle;"> ) in the top right corner, next to run.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="publishing.html#cb10-1" tabindex="-1"></a>rsconnect<span class="sc">::</span><span class="fu">deployApp</span>(<span class="st">&#39;path/to/your/app&#39;</span>)</span></code></pre></div>
-<p>Select the files to be published: Broadly, these will include your app.R file, any other data files, and any image and css (www folder) files. The specific files required for CaRDO are the following:</p>
+<p>Finally, make the connection by running the code below. When your browser opens, confirm the code matches the one in your RStudio console, then click <em>Continue</em> and <em>Authorize</em>. Note don’t share your link code with others - treat it like a password.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="publishing.html#cb10-1" tabindex="-1"></a>rsconnect<span class="sc">::</span><span class="fu">connectCloudUser</span>()</span></code></pre></div>
+<p><img src="images/publish3_connect.jpg" width="100%" style="padding:10px; border:2px solid;" /></p>
+<p><strong>Step 4 - deploy/publish</strong></p>
+<p>You’re now ready to publish your CaRDO dashboard! With your <code>app.R</code> file open, click the publish icon in the top right corner, next to run. Alternatively, you may run the code below.</p>
+<p><img src="images/publish_icon.png" width="100%" style="padding:10px; border:2px solid;" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="publishing.html#cb11-1" tabindex="-1"></a>rsconnect<span class="sc">::</span><span class="fu">deployApp</span>(<span class="st">&#39;path/to/your/app&#39;</span>)</span></code></pre></div>
+<p>You should see your Posit Connect Cloud account in the right field.
+Select the files to be published: broadly, these will include your app.R file, any other data files, and any image and css (www folder) files. The specific files required for CaRDO are the following:</p>
 <ul>
 <li>app.R</li>
 <li>load_data.R</li>
@@ -249,26 +248,38 @@ div.csl-indent {
 <li>www</li>
 </ul>
 <p><img src="images/publish_files.png" width="100%" style="padding:10px; border:2px solid;" /></p>
-<p>Give your dashboard a name (this will appear in the URL!) and hit Publish - this will take a moment.</p>
-<p>And you’re done. Your cancer dashboard is ready to share!</p>
-<p><br></p>
-<div id="pricing" class="section level3 hasAnchor" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> Pricing<a href="publishing.html#pricing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Shinyapps.io has a range of paid plans to suit different needs when deploying Shiny applications. By default, users can start with the free tier, which allows limited deployment with restrictions on active hours and resources. You can find more details on pricing tiers and available services <a href="https://www.shinyapps.io/" target="_blank">here</a></p>
-<p><br></p>
-</div>
-<div id="and-thats-a-wrap" class="section level3 hasAnchor" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> And that’s a wrap!<a href="publishing.html#and-thats-a-wrap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Give your dashboard a name and hit Publish. The publishing process will take a moment. When it has finished, your web browser will open at your dashboard’s page within Connect Cloud. Your dashboard is now published! You can copy the dashboard specfic URL to view the dashboard outside of Posit Connect Cloud.</p>
+<p><strong>Step 5 - Customise URL</strong></p>
+<p>Before sharing, customise your URL. Annoyingly, the default is to publish your dashboard to a random character string - that won’t do for us. Select your dashboard in Connect Cloud and click settings in the top right <img src="images/publish_settings.png" />. Select URL on the left, toggle <code>Customize your URL</code> on and give your dashboard a URL name.</p>
+<div id="and-thats-a-wrap" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> And that’s a wrap<a href="publishing.html#and-thats-a-wrap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Your CaRDO dashboard is ready to share - communicate timely, population-level cancer statistics with clarity and purpose. Sharing this data helps raise awareness of cancer trends, highlight disparities, and inform evidence-based action across research, policy, and care.</p>
-<p>The remainder of this handbook provides details on <a href="updating-your-dashboard.html#updating-your-dashboard">updating</a> your CaRDO dashboard when new cancer data becomes available, CaRDO <a href="methods.html#methods">methods</a>, <a href="references.html#references">references</a>, and <a href="citation-contact.html#citation-contact">citation &amp; Contact</a> information. Once again, please reach out to us at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a> if you have any questions, concerns or feedback - we’d love to hear from you.</p>
+<p>The remainder of this handbook provides details on <a href="updating-your-dashboard.html#updating-your-dashboard">updating</a> your CaRDO dashboard when new cancer data becomes available, CaRDO <a href="methods.html#methods">methods</a>, <a href="references.html#references">references</a>, and <a href="citation-contact.html#citation-contact">citation &amp; Contact</a> information. Once again, if you use CaRDO, please get in touch at <a href="mailto:statistics@cancerqld.org.au" class="email">statistics@cancerqld.org.au</a>. Knowing who uses CaRDO helps us demonstrate its impact and secure future funding. We’d also love to hear any questions, concerns or feedback you might have.</p>
 <p>Thank you for using CaRDO.</p>
+</div>
+<div id="pricing" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Pricing<a href="publishing.html#pricing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A quick note on pricing. Connect Cloud has a range of plans to suit different needs. By default, users can start with the free plan, which allows limited deployment with restrictions on the number of applications, active hours and compute resources. Paid plans increase these limits and add features such as private sharing. Note that on the free plan your dashboard is <strong>always publicly accessible</strong> - we assume this is not a concern, as CaRDO dashbaords are designed to share population-level statistics with a broad audience. You can find more details on plans and pricing <a href="https://connect.posit.cloud/plans">here</a>.</p>
+<p>The free plan is well suited to trying things out and to small, low-traffic dashboards. For small to medium-sized organisations running dashboards in regular use, we’d expect the Basic plan to be the practical starting point. The CaRDO software is free and open source, but reliable hosting at scale usually isn’t, so budget for this early on. Where alternative low-cost hosting options become available, we will aim to update them here.</p>
+</div>
+</div>
+<div id="already-using-shinyapps" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Already using shinyapps.io?<a href="publishing.html#already-using-shinyapps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you have previously published a CaRDO dashboard on shinyapps.io, or already have a shinyapps.io account, there is something you should know: Posit is retiring shinyapps.io and moving all of its users to Connect Cloud. Your dashboard will not disappear overnight and you do not need to take any action right now. In brief, here is what to expect:</p>
+<ul>
+<li><strong>You choose how and when you move.</strong> Posit provides a self-serve migration tool in Connect Cloud. You link your shinyapps.io account, select your dashboard, and test it on Connect Cloud before you finalize the move. If you would rather not use the tool, Posit will migrate accounts automatically in waves during 2027: free accounts from 28 January 2027, Starter and Basic accounts from 31 March 2027, and Standard and Pro accounts from 30 June 2027.</li>
+<li><strong>Your links keep working.</strong> Once a dashboard has been migrated, its old shinyapps.io address will redirect to its new home on Connect Cloud, so links you have already shared will not break.</li>
+<li><strong>Most dashboards will run unchanged.</strong> We recommend testing yours on Connect Cloud before finalizing the move.</li>
+<li><strong>Paid plans carry over.</strong> Posit will give you an equivalent Connect Cloud plan at no charge, and your current pricing is retained. If you pay for shinyapps.io, do not cancel your subscription until the migration is complete.</li>
+<li><strong>Updating from RStudio.</strong> If you have been updating your dashboard using the publish button in RStudio, note that migrating does not change where RStudio publishes to - it will keep sending updates to shinyapps.io until you repoint it. Posit explains how in <a href="https://docs.posit.co/connect-cloud/user/shinyapps-migration.html#update-your-rsconnect-deployment-records">their migration guide</a>.</li>
+</ul>
+<p>Full details, including timelines, plan mapping and troubleshooting, are available in Posit’s <a href="https://docs.posit.co/shinyapps.io/guide/migration/">migration guide</a>. These details were correct at the time of writing, but Posit may update them, so please check the guide for the latest information. We will also add step-by-step instructions for migrating a CaRDO dashboard to a future version of this handbook.</p>
 <p><br>
 <span style="font-size:25px;"><a href="updating-your-dashboard.html#updating-your-dashboard">Updating Your Dashboard</a></span></p>
 <p><span style="font-size:25px;"><a href="methods.html#methods">Methods</a></span></p>
 <p><span style="font-size:25px;"><a href="references.html#references">References</a></span></p>
 <p><span style="font-size:25px;"><a href="citation-contact.html#citation-contact">Citation &amp; Contact</a></span></p>
 
-</div>
 </div>
 </div>
             </section>
